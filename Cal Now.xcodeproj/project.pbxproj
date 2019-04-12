@@ -12,6 +12,9 @@
 		D96A11A72249640400704AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96A11A52249640400704AF0 /* Main.storyboard */; };
 		D96A11A92249640600704AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96A11A82249640600704AF0 /* Assets.xcassets */; };
 		D96A11AC2249640600704AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96A11AA2249640600704AF0 /* LaunchScreen.storyboard */; };
+		D9E53C1C226048FB00795B7B /* academicScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C19226048FB00795B7B /* academicScraper.swift */; };
+		D9E53C1D226048FB00795B7B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C1A226048FB00795B7B /* Event.swift */; };
+		D9E53C1E226048FB00795B7B /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C1B226048FB00795B7B /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		D96A11A82249640600704AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96A11AB2249640600704AF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D96A11AD2249640600704AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9E53C19226048FB00795B7B /* academicScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = academicScraper.swift; sourceTree = "<group>"; };
+		D9E53C1A226048FB00795B7B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D9E53C1B226048FB00795B7B /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		D96A11A02249640400704AF0 /* Cal Now */ = {
 			isa = PBXGroup;
 			children = (
-				D96A11A12249640400704AF0 /* AppDelegate.swift */,
-				D96A11A32249640400704AF0 /* ViewController.swift */,
-				D96A11A52249640400704AF0 /* Main.storyboard */,
+				D9E53C18226048EC00795B7B /* Model */,
+				D9E53C1F22604A0300795B7B /* Views */,
+				D9E53C2022604A0F00795B7B /* Controllers */,
 				D96A11A82249640600704AF0 /* Assets.xcassets */,
-				D96A11AA2249640600704AF0 /* LaunchScreen.storyboard */,
 				D96A11AD2249640600704AF0 /* Info.plist */,
+				D96A11A12249640400704AF0 /* AppDelegate.swift */,
 			);
 			path = "Cal Now";
+			sourceTree = "<group>";
+		};
+		D9E53C18226048EC00795B7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9E53C19226048FB00795B7B /* academicScraper.swift */,
+				D9E53C1A226048FB00795B7B /* Event.swift */,
+				D9E53C1B226048FB00795B7B /* Events.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9E53C1F22604A0300795B7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D96A11A52249640400704AF0 /* Main.storyboard */,
+				D96A11AA2249640600704AF0 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9E53C2022604A0F00795B7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D96A11A32249640400704AF0 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +129,7 @@
 				TargetAttributes = {
 					D96A119D2249640400704AF0 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -135,8 +169,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E53C1D226048FB00795B7B /* Event.swift in Sources */,
+				D9E53C1C226048FB00795B7B /* academicScraper.swift in Sources */,
 				D96A11A42249640400704AF0 /* ViewController.swift in Sources */,
 				D96A11A22249640400704AF0 /* AppDelegate.swift in Sources */,
+				D9E53C1E226048FB00795B7B /* Events.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +328,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkefisher.Cal-Now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -309,7 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.darkefisher.Cal-Now";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

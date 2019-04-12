@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MQq-r2-fWj">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="E2a-Hf-D7Y">
+            <objects>
+                <viewController id="MQq-r2-fWj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h8s-ZA-dBC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rfz-f5-lVc">
+                                <rect key="frame" x="0.0" y="91.5" width="414" height="179.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vi-he-QqQ">
+                                        <rect key="frame" x="0.0" y="46.5" width="205" height="86.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="75"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-I0-93q">
+                                        <rect key="frame" x="209" y="46.5" width="205" height="86.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="75"/>
+                                        <color key="textColor" red="0.99923831220000003" green="0.86847323180000002" blue="0.0017306855880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Ihz-S8-u00">
+                                <rect key="frame" x="197" y="666" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rfz-f5-lVc" firstAttribute="centerX" secondItem="I4e-cH-72W" secondAttribute="centerX" id="Ank-Ox-P97"/>
+                            <constraint firstItem="rfz-f5-lVc" firstAttribute="height" secondItem="h8s-ZA-dBC" secondAttribute="height" multiplier="0.2" id="Arj-U5-x2J"/>
+                            <constraint firstItem="rfz-f5-lVc" firstAttribute="centerY" secondItem="I4e-cH-72W" secondAttribute="centerY" multiplier="0.4" id="IsC-wv-v8T"/>
+                            <constraint firstItem="rfz-f5-lVc" firstAttribute="width" secondItem="h8s-ZA-dBC" secondAttribute="width" id="wW6-FH-1q8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I4e-cH-72W"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gla-EQ-j8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="375"/>
+        </scene>
+    </scenes>
+</document>
