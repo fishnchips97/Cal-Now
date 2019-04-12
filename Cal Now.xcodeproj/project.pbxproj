@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9DBBD0466B873BBFA0F1BCF9 /* Pods_Cal_Now.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6C6A8360654847621E6720 /* Pods_Cal_Now.framework */; };
 		9E726EDA2260278A004EAF1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E726ED922602789004EAF1A /* Main.storyboard */; };
-		9E726EDC226027CF004EAF1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E726EDB226027CF004EAF1A /* LaunchScreen.storyboard */; };
 		D96A11A22249640400704AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A11A12249640400704AF0 /* AppDelegate.swift */; };
 		D96A11A42249640400704AF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A11A32249640400704AF0 /* ViewController.swift */; };
 		D96A11A92249640600704AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96A11A82249640600704AF0 /* Assets.xcassets */; };
@@ -19,7 +18,7 @@
 		442537211277EA701EC613FC /* Pods-Cal Now.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.debug.xcconfig"; path = "Target Support Files/Pods-Cal Now/Pods-Cal Now.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED2D7B58F0166A72C412C37 /* Pods-Cal Now.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.release.xcconfig"; path = "Target Support Files/Pods-Cal Now/Pods-Cal Now.release.xcconfig"; sourceTree = "<group>"; };
 		9E726ED922602789004EAF1A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9E726EDB226027CF004EAF1A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9E726EDD22602818004EAF1A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/mangesh/Documents/UC Berkeley/Spring 2019/iOS Decal/CalNow/Cal-Now/Cal Now/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		CB6C6A8360654847621E6720 /* Pods_Cal_Now.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cal_Now.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96A119E2249640400704AF0 /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96A11A12249640400704AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +81,7 @@
 				D96A11A32249640400704AF0 /* ViewController.swift */,
 				D96A11A82249640600704AF0 /* Assets.xcassets */,
 				9E726ED922602789004EAF1A /* Main.storyboard */,
-				9E726EDB226027CF004EAF1A /* LaunchScreen.storyboard */,
+				9E726EDD22602818004EAF1A /* Launch Screen.storyboard */,
 				D96A11AD2249640600704AF0 /* Info.plist */,
 			);
 			path = "Cal Now";
@@ -148,7 +147,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E726EDC226027CF004EAF1A /* LaunchScreen.storyboard in Resources */,
 				9E726EDA2260278A004EAF1A /* Main.storyboard in Resources */,
 				D96A11A92249640600704AF0 /* Assets.xcassets in Resources */,
 			);

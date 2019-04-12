@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mangesh/Documents/UC Berkeley/Spring 2019/iOS Decal/CalNow/Cal-Now/Cal Now/Launch Screen.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:Cal Now.xcodeproj">
    </FileRef>
    <FileRef
