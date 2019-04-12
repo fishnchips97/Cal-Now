@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12CFCBD6981841B7A2FA25A5 /* Pods_Cal_Now.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */; };
 		D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5122604BF900795B7B /* AppDelegate.swift */; };
 		D9E53C5422604BF900795B7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5322604BF900795B7B /* ViewController.swift */; };
 		D9E53C5722604BF900795B7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5522604BF900795B7B /* Main.storyboard */; };
 		D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */; };
 		D9E53C5C22604BFA00795B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5B22604BFA00795B7B /* Assets.xcassets */; };
 		D9E53C5F22604BFA00795B7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5D22604BFA00795B7B /* LaunchScreen.storyboard */; };
+		D9E53C6A22604E1900795B7B /* academicScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6722604E1900795B7B /* academicScraper.swift */; };
+		D9E53C6B22604E1900795B7B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6822604E1900795B7B /* Event.swift */; };
+		D9E53C6C22604E1900795B7B /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6922604E1900795B7B /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B7D2FC541A12404A200779A /* Pods-Cal Now.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cal Now/Pods-Cal Now.release.xcconfig"; sourceTree = "<group>"; };
+		75356C9736EAA64AEAB82964 /* Pods-Cal Now.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cal Now/Pods-Cal Now.debug.xcconfig"; sourceTree = "<group>"; };
 		D9E53C4E22604BF900795B7B /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E53C5122604BF900795B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9E53C5322604BF900795B7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		D9E53C5B22604BFA00795B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E53C5E22604BFA00795B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9E53C6022604BFA00795B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9E53C6722604E1900795B7B /* academicScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = academicScraper.swift; sourceTree = "<group>"; };
+		D9E53C6822604E1900795B7B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D9E53C6922604E1900795B7B /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cal_Now.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CFCBD6981841B7A2FA25A5 /* Pods_Cal_Now.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		448F621B08DC9CF995FDBF16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D9E53C4522604BF900795B7B = {
 			isa = PBXGroup;
 			children = (
 				D9E53C5022604BF900795B7B /* Cal Now */,
 				D9E53C4F22604BF900795B7B /* Products */,
+				E6A4CBEB3E8734EDF08E79A6 /* Pods */,
+				448F621B08DC9CF995FDBF16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +77,51 @@
 		D9E53C5022604BF900795B7B /* Cal Now */ = {
 			isa = PBXGroup;
 			children = (
-				D9E53C5122604BF900795B7B /* AppDelegate.swift */,
-				D9E53C5322604BF900795B7B /* ViewController.swift */,
-				D9E53C5522604BF900795B7B /* Main.storyboard */,
+				D9E53C6622604E0E00795B7B /* Model */,
+				D9E53C6D22604E2700795B7B /* View */,
+				D9E53C6E22604E3200795B7B /* Controller */,
 				D9E53C5B22604BFA00795B7B /* Assets.xcassets */,
-				D9E53C5D22604BFA00795B7B /* LaunchScreen.storyboard */,
+				D9E53C5122604BF900795B7B /* AppDelegate.swift */,
 				D9E53C6022604BFA00795B7B /* Info.plist */,
 				D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */,
 			);
 			path = "Cal Now";
+			sourceTree = "<group>";
+		};
+		D9E53C6622604E0E00795B7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9E53C6722604E1900795B7B /* academicScraper.swift */,
+				D9E53C6822604E1900795B7B /* Event.swift */,
+				D9E53C6922604E1900795B7B /* Events.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9E53C6D22604E2700795B7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9E53C5522604BF900795B7B /* Main.storyboard */,
+				D9E53C5D22604BFA00795B7B /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9E53C6E22604E3200795B7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9E53C5322604BF900795B7B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E6A4CBEB3E8734EDF08E79A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75356C9736EAA64AEAB82964 /* Pods-Cal Now.debug.xcconfig */,
+				3B7D2FC541A12404A200779A /* Pods-Cal Now.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +131,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9E53C6322604BFA00795B7B /* Build configuration list for PBXNativeTarget "Cal Now" */;
 			buildPhases = (
+				294314381900FA237D4A66AD /* [CP] Check Pods Manifest.lock */,
 				D9E53C4A22604BF900795B7B /* Sources */,
 				D9E53C4B22604BF900795B7B /* Frameworks */,
 				D9E53C4C22604BF900795B7B /* Resources */,
@@ -133,14 +191,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		294314381900FA237D4A66AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cal Now-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D9E53C4A22604BF900795B7B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E53C6C22604E1900795B7B /* Events.swift in Sources */,
 				D9E53C5422604BF900795B7B /* ViewController.swift in Sources */,
 				D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */,
 				D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */,
+				D9E53C6A22604E1900795B7B /* academicScraper.swift in Sources */,
+				D9E53C6B22604E1900795B7B /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +370,7 @@
 		};
 		D9E53C6422604BFA00795B7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75356C9736EAA64AEAB82964 /* Pods-Cal Now.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +389,7 @@
 		};
 		D9E53C6522604BFA00795B7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B7D2FC541A12404A200779A /* Pods-Cal Now.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
