@@ -12,13 +12,13 @@
 		D96A11A22249640400704AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A11A12249640400704AF0 /* AppDelegate.swift */; };
 		D96A11A42249640400704AF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96A11A32249640400704AF0 /* ViewController.swift */; };
 		D96A11A92249640600704AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96A11A82249640600704AF0 /* Assets.xcassets */; };
+		D9E53BD42260388E00795B7B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53BD32260388E00795B7B /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		442537211277EA701EC613FC /* Pods-Cal Now.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.debug.xcconfig"; path = "Target Support Files/Pods-Cal Now/Pods-Cal Now.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED2D7B58F0166A72C412C37 /* Pods-Cal Now.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.release.xcconfig"; path = "Target Support Files/Pods-Cal Now/Pods-Cal Now.release.xcconfig"; sourceTree = "<group>"; };
 		9E726ED922602789004EAF1A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9E726EDD22602818004EAF1A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/mangesh/Documents/UC Berkeley/Spring 2019/iOS Decal/CalNow/Cal-Now/Cal Now/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
 		9E726EEF226028ED004EAF1A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9E726EF0226028EE004EAF1A /* academicScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academicScraper.swift; sourceTree = "<group>"; };
 		9E726EF1226028EE004EAF1A /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
@@ -28,6 +28,7 @@
 		D96A11A32249640400704AF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D96A11A82249640600704AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96A11AD2249640600704AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9E53BD32260388E00795B7B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +96,7 @@
 				D96A11A32249640400704AF0 /* ViewController.swift */,
 				D96A11A82249640600704AF0 /* Assets.xcassets */,
 				9E726ED922602789004EAF1A /* Main.storyboard */,
-				9E726EDD22602818004EAF1A /* Launch Screen.storyboard */,
+				D9E53BD32260388E00795B7B /* Launch Screen.storyboard */,
 				D96A11AD2249640600704AF0 /* Info.plist */,
 			);
 			path = "Cal Now";
@@ -161,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E53BD42260388E00795B7B /* Launch Screen.storyboard in Resources */,
 				9E726EDA2260278A004EAF1A /* Main.storyboard in Resources */,
 				D96A11A92249640600704AF0 /* Assets.xcassets in Resources */,
 			);
