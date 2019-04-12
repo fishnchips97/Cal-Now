@@ -19,6 +19,9 @@
 		7ED2D7B58F0166A72C412C37 /* Pods-Cal Now.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.release.xcconfig"; path = "Target Support Files/Pods-Cal Now/Pods-Cal Now.release.xcconfig"; sourceTree = "<group>"; };
 		9E726ED922602789004EAF1A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9E726EDD22602818004EAF1A /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "/Users/mangesh/Documents/UC Berkeley/Spring 2019/iOS Decal/CalNow/Cal-Now/Cal Now/Launch Screen.storyboard"; sourceTree = "<absolute>"; };
+		9E726EEF226028ED004EAF1A /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9E726EF0226028EE004EAF1A /* academicScraper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = academicScraper.swift; sourceTree = "<group>"; };
+		9E726EF1226028EE004EAF1A /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		CB6C6A8360654847621E6720 /* Pods_Cal_Now.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cal_Now.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96A119E2249640400704AF0 /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96A11A12249640400704AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9E726EEE226028E7004EAF1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E726EF0226028EE004EAF1A /* academicScraper.swift */,
+				9E726EEF226028ED004EAF1A /* Event.swift */,
+				9E726EF1226028EE004EAF1A /* Events.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D96A11952249640400704AF0 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +90,7 @@
 		D96A11A02249640400704AF0 /* Cal Now */ = {
 			isa = PBXGroup;
 			children = (
+				9E726EEE226028E7004EAF1A /* Model */,
 				D96A11A12249640400704AF0 /* AppDelegate.swift */,
 				D96A11A32249640400704AF0 /* ViewController.swift */,
 				D96A11A82249640600704AF0 /* Assets.xcassets */,
