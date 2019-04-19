@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12CFCBD6981841B7A2FA25A5 /* Pods_Cal_Now.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */; };
+		9E070447226942B000594FE5 /* MainCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E070446226942B000594FE5 /* MainCalendarViewController.swift */; };
+		9E07044B2269446300594FE5 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07044A2269446300594FE5 /* AboutPageViewController.swift */; };
 		D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5122604BF900795B7B /* AppDelegate.swift */; };
 		D9E53C5422604BF900795B7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5322604BF900795B7B /* ViewController.swift */; };
 		D9E53C5722604BF900795B7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5522604BF900795B7B /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		3B7D2FC541A12404A200779A /* Pods-Cal Now.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cal Now/Pods-Cal Now.release.xcconfig"; sourceTree = "<group>"; };
 		75356C9736EAA64AEAB82964 /* Pods-Cal Now.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cal Now.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cal Now/Pods-Cal Now.debug.xcconfig"; sourceTree = "<group>"; };
+		9E070446226942B000594FE5 /* MainCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarViewController.swift; sourceTree = "<group>"; };
+		9E07044A2269446300594FE5 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		D9E53C4E22604BF900795B7B /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E53C5122604BF900795B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9E53C5322604BF900795B7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 		D9E53C6E22604E3200795B7B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9E07044A2269446300594FE5 /* AboutPageViewController.swift */,
+				9E070446226942B000594FE5 /* MainCalendarViewController.swift */,
 				D9E53C5322604BF900795B7B /* ViewController.swift */,
 			);
 			path = Controller;
@@ -227,6 +233,8 @@
 				D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */,
 				D9E53C6A22604E1900795B7B /* academicScraper.swift in Sources */,
 				D9E53C6B22604E1900795B7B /* Event.swift in Sources */,
+				9E070447226942B000594FE5 /* MainCalendarViewController.swift in Sources */,
+				9E07044B2269446300594FE5 /* AboutPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
