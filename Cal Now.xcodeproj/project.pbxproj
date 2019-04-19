@@ -14,7 +14,7 @@
 		D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */; };
 		D9E53C5C22604BFA00795B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5B22604BFA00795B7B /* Assets.xcassets */; };
 		D9E53C5F22604BFA00795B7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5D22604BFA00795B7B /* LaunchScreen.storyboard */; };
-		D9E53C6A22604E1900795B7B /* academicScraper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6722604E1900795B7B /* academicScraper.swift */; };
+		D9E53C6A22604E1900795B7B /* WebCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6722604E1900795B7B /* WebCollector.swift */; };
 		D9E53C6B22604E1900795B7B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6822604E1900795B7B /* Event.swift */; };
 		D9E53C6C22604E1900795B7B /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C6922604E1900795B7B /* Events.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +30,7 @@
 		D9E53C5B22604BFA00795B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9E53C5E22604BFA00795B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9E53C6022604BFA00795B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9E53C6722604E1900795B7B /* academicScraper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = academicScraper.swift; sourceTree = "<group>"; };
+		D9E53C6722604E1900795B7B /* WebCollector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCollector.swift; sourceTree = "<group>"; };
 		D9E53C6822604E1900795B7B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D9E53C6922604E1900795B7B /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cal_Now.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +91,7 @@
 		D9E53C6622604E0E00795B7B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D9E53C6722604E1900795B7B /* academicScraper.swift */,
+				D9E53C6722604E1900795B7B /* WebCollector.swift */,
 				D9E53C6822604E1900795B7B /* Event.swift */,
 				D9E53C6922604E1900795B7B /* Events.swift */,
 			);
@@ -225,7 +225,7 @@
 				D9E53C5422604BF900795B7B /* ViewController.swift in Sources */,
 				D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */,
 				D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */,
-				D9E53C6A22604E1900795B7B /* academicScraper.swift in Sources */,
+				D9E53C6A22604E1900795B7B /* WebCollector.swift in Sources */,
 				D9E53C6B22604E1900795B7B /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
