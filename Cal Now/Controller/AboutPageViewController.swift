@@ -16,7 +16,10 @@ class AboutPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func leaveAboutPage(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "leaveAbout", sender: sender)
+    }
+    
     /*
     // MARK: - Navigation
 
