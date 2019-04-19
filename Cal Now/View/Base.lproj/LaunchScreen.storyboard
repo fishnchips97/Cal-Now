@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AiN-Ab-m5N">
-                                <rect key="frame" x="0.0" y="91.5" width="414" height="179.5"/>
+                                <rect key="frame" x="-16" y="91.5" width="414" height="179.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlT-QF-aiK">
                                         <rect key="frame" x="0.0" y="46.5" width="205" height="86.5"/>
@@ -48,7 +48,7 @@
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AiN-Ab-m5N" firstAttribute="centerY" secondItem="lwh-4m-PNd" secondAttribute="centerY" multiplier="0.4" id="3M7-aQ-iIc"/>
-                            <constraint firstItem="AiN-Ab-m5N" firstAttribute="centerX" secondItem="lwh-4m-PNd" secondAttribute="centerX" id="FPR-e1-8DH"/>
+                            <constraint firstItem="AiN-Ab-m5N" firstAttribute="centerX" secondItem="lwh-4m-PNd" secondAttribute="centerX" constant="-16" id="FPR-e1-8DH"/>
                             <constraint firstItem="AiN-Ab-m5N" firstAttribute="width" secondItem="YHK-OQ-7fm" secondAttribute="width" id="U9M-VB-Fdr"/>
                             <constraint firstItem="AiN-Ab-m5N" firstAttribute="height" secondItem="YHK-OQ-7fm" secondAttribute="height" multiplier="0.2" id="WXZ-qK-KtQ"/>
                         </constraints>
@@ -61,6 +61,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="oski" width="16" height="16"/>
+        <image name="oski" width="872" height="700"/>
     </resources>
 </document>
