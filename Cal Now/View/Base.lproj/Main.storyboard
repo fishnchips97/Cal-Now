@@ -104,68 +104,77 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrJ-7l-y5N">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="About" id="3gB-kh-K8K"/>
+                                    <navigationItem title="About" id="3gB-kh-K8K">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="qj0-Qd-13j">
+                                            <connections>
+                                                <action selector="leaveAboutPage:" destination="PYD-d2-UXu" id="bsc-Zs-po7"/>
+                                                <segue destination="TA4-Yw-p2C" kind="show" identifier="leaveAbout" id="d7Y-97-swV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gr-1M-ftf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7No-lQ-hgd">
-                                        <rect key="frame" x="0.0" y="8" width="414" height="500"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7No-lQ-hgd">
+                                        <rect key="frame" x="8" y="8" width="398" height="750"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oski" translatesAutoresizingMaskIntoConstraints="NO" id="neg-np-veV">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="erik" translatesAutoresizingMaskIntoConstraints="NO" id="neg-np-veV">
+                                                <rect key="frame" x="0.0" y="0.0" width="398" height="187.5"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2W-Qy-rTQ">
-                                                <rect key="frame" x="0.0" y="129" width="414" height="113.5"/>
+                                                <rect key="frame" x="0.0" y="187.5" width="398" height="187.5"/>
                                                 <string key="text">Hi, my name is Oski and I hate trees. I built this app to so that I would have a quick and easy way to check for events that are going around on campus.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oski" translatesAutoresizingMaskIntoConstraints="NO" id="pfZ-x8-ss5">
-                                                <rect key="frame" x="0.0" y="257.5" width="414" height="114"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mangesh" translatesAutoresizingMaskIntoConstraints="NO" id="pfZ-x8-ss5">
+                                                <rect key="frame" x="0.0" y="375" width="398" height="187.5"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, I'm another Oski! " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBJ-ri-Pvo">
-                                                <rect key="frame" x="0.0" y="386.5" width="414" height="113.5"/>
+                                                <rect key="frame" x="0.0" y="562.5" width="398" height="187.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="4bP-Vn-hH5"/>
+                                            <constraint firstAttribute="height" constant="750" id="4bP-Vn-hH5"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="trailing" secondItem="8Gr-1M-ftf" secondAttribute="trailing" id="5Pq-GM-GuL"/>
-                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="leading" secondItem="8Gr-1M-ftf" secondAttribute="leading" id="NbG-my-Itf"/>
+                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="trailing" secondItem="8Gr-1M-ftf" secondAttribute="trailing" constant="-8" id="5Pq-GM-GuL"/>
+                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="leading" secondItem="8Gr-1M-ftf" secondAttribute="leading" constant="8" id="NbG-my-Itf"/>
                                     <constraint firstItem="7No-lQ-hgd" firstAttribute="top" secondItem="8Gr-1M-ftf" secondAttribute="topMargin" id="PKU-nQ-8ph"/>
                                     <constraint firstItem="7No-lQ-hgd" firstAttribute="centerX" secondItem="8Gr-1M-ftf" secondAttribute="centerX" id="lVr-O2-POL"/>
-                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="bottom" secondItem="8Gr-1M-ftf" secondAttribute="bottom" constant="-566" id="ygT-4D-Cuy"/>
+                                    <constraint firstItem="7No-lQ-hgd" firstAttribute="bottom" secondItem="8Gr-1M-ftf" secondAttribute="bottom" constant="-266" id="ygT-4D-Cuy"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="top" secondItem="GrJ-7l-y5N" secondAttribute="bottom" id="14q-n1-LgD"/>
-                            <constraint firstItem="8Gr-1M-ftf" firstAttribute="top" secondItem="tOL-99-H7j" secondAttribute="top" constant="44" id="18W-4H-kmH"/>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="leading" secondItem="GrJ-7l-y5N" secondAttribute="leading" id="90I-mt-dvi"/>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="width" secondItem="tOL-99-H7j" secondAttribute="width" id="Cn4-ds-291"/>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="centerX" secondItem="tOL-99-H7j" secondAttribute="centerX" id="d8h-3j-l9Z"/>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="trailing" secondItem="GrJ-7l-y5N" secondAttribute="trailing" id="eos-Xs-0NR"/>
                             <constraint firstItem="8Gr-1M-ftf" firstAttribute="bottom" secondItem="tOL-99-H7j" secondAttribute="bottom" id="oJK-o3-Uqh"/>
+                            <constraint firstItem="GrJ-7l-y5N" firstAttribute="bottom" secondItem="8Gr-1M-ftf" secondAttribute="bottom" constant="-774" id="zvy-MB-7Qp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tOL-99-H7j"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGY-MF-dT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PYD-d2-UXu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1057.9710144927537" y="120.53571428571428"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="120.53571428571428"/>
         </scene>
     </scenes>
     <resources>
-        <image name="oski" width="872" height="700"/>
+        <image name="erik" width="280" height="280"/>
+        <image name="mangesh" width="2941" height="3390"/>
     </resources>
 </document>
