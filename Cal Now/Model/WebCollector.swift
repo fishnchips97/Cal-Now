@@ -11,26 +11,25 @@ import WebKit
 
 class WebCollector {
     
-    enum scraperType {
-        case academic, sport, entertainment
+    enum format {
+        case Academic, Sport, Concert
     }
     
     enum sports : String, CaseIterable {
-        case baseball, softball, track, mten, wten
+        case baseball,
+             softball,
+             track,
+             mten,
+             wten
     }
     
-    let url: String
-    let numSources = sports.allCases.count + 2
+    var websites = [String:String]()
     
-    init(type: scraperType) {
-        switch type {
-        case .academic:
-            url = "https://inforib.com/edu/uc-berkeley-academic-calendar"
-        case .sport:
-            url = "https://calbears.com/schedule.aspx?path=baseball"
-        case .entertainment:
-            url = "http://www.thegreektheatreberkeley.com"
-        
+    init() {
+        websites["https://inforib.com/edu/uc-berkeley-academic-calendar"] = ""
+        websites["http://www.thegreektheatreberkeley.com"] = ""
+        for sport in sports.allCases {
+            websites["https://calbears.com/schedule.aspx?path=\(sport.rawValue)"] = ""
         }
     }
     

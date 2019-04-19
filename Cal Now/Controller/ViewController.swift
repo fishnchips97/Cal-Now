@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let collector = WebCollector(type: .sport)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let url = URL(string: "<#T##String#>")
+                
+        
         
         
         // Do any additional setup after loading the view.

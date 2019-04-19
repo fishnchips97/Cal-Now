@@ -10,9 +10,23 @@ import UIKit
 
 class MainCalendarViewController: UIViewController {
 
+    let collector = WebCollector()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for site in collector.websites {
+            let url = URL(string: site.key)
+            let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                if error != nil {
+                    print(error ?? "Error")
+                } else {
+                    let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//                    print(htmlContent)
+                    self.collector.websites[site.key] = htmlContent?.substring(from: 0)
+                }
+            }
+            task.resume()
+        }
         // Do any additional setup after loading the view.
     }
     
