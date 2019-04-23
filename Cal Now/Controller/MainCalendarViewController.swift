@@ -3,6 +3,7 @@
 //  Cal Now
 //
 //  Created by Mangesh Darke on 4/18/19.
+//  Additional contributions by Erik Fisher
 //  Copyright © 2019 DarkeFisher. All rights reserved.
 //
 
@@ -18,6 +19,7 @@ class MainCalendarViewController: UIViewController {
             let url = URL(string: site.key)
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
                 if error != nil {
+                    print(site.key)
                     print(error ?? "Error")
                 } else {
                     let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
@@ -26,7 +28,9 @@ class MainCalendarViewController: UIViewController {
                 }
             }
             task.resume()
+            
         }
+        collector.parseWebsites()
         // Do any additional setup after loading the view.
     }
     

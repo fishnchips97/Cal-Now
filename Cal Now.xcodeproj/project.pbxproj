@@ -11,7 +11,6 @@
 		9E070447226942B000594FE5 /* MainCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E070446226942B000594FE5 /* MainCalendarViewController.swift */; };
 		9E07044B2269446300594FE5 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07044A2269446300594FE5 /* AboutPageViewController.swift */; };
 		D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5122604BF900795B7B /* AppDelegate.swift */; };
-		D9E53C5422604BF900795B7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5322604BF900795B7B /* ViewController.swift */; };
 		D9E53C5722604BF900795B7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5522604BF900795B7B /* Main.storyboard */; };
 		D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */; };
 		D9E53C5C22604BFA00795B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5B22604BFA00795B7B /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		9E07044A2269446300594FE5 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		D9E53C4E22604BF900795B7B /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E53C5122604BF900795B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9E53C5322604BF900795B7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9E53C5622604BF900795B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9E53C5922604BF900795B7B /* Cal_Now.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cal_Now.xcdatamodel; sourceTree = "<group>"; };
 		D9E53C5B22604BFA00795B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			children = (
 				9E07044A2269446300594FE5 /* AboutPageViewController.swift */,
 				9E070446226942B000594FE5 /* MainCalendarViewController.swift */,
-				D9E53C5322604BF900795B7B /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9E53C6C22604E1900795B7B /* Events.swift in Sources */,
-				D9E53C5422604BF900795B7B /* ViewController.swift in Sources */,
 				D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */,
 				D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */,
 				D9E53C6A22604E1900795B7B /* WebCollector.swift in Sources */,

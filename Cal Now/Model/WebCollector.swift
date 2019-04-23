@@ -27,13 +27,24 @@ class WebCollector {
     
     init() {
         websites["https://inforib.com/edu/uc-berkeley-academic-calendar"] = ""
-        websites["http://www.thegreektheatreberkeley.com"] = ""
+        websites["https://www.thegreektheatreberkeley.com"] = ""
         for sport in sports.allCases {
             websites["https://calbears.com/schedule.aspx?path=\(sport.rawValue)"] = ""
         }
     }
     
-    
+    func parseWebsites() {
+        for site in websites {
+            if site.key.contains("inforib.com") {
+                print("inforib")
+            } else if site.key.contains("greektheatre") {
+                print("theatre")
+            } else if site.key.contains("calbears.com"){
+                print("go bears")
+            }
+            print(site.value)
+        }
+    }
     
     
 }
