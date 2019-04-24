@@ -101,59 +101,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Gr-1M-ftf">
-                                <rect key="frame" x="0.0" y="69" width="414" height="793"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why'd we make CalNow?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-G8-wpp">
-                                        <rect key="frame" x="18" y="8" width="242" height="23.5"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                        <color key="textColor" red="0.9469569672" green="1" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the pictures of our founders to check out why!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YZ-1S-ou3">
-                                        <rect key="frame" x="26" y="47" width="354.5" height="52"/>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-5E-DDd">
-                                        <rect key="frame" x="34.5" y="120" width="345" height="500"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-Ec-cyu" userLabel="erik">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="245"/>
-                                                <state key="normal" image="erik"/>
-                                                <connections>
-                                                    <action selector="personPressed:" destination="ttE-f9-B7W" eventType="touchUpInside" id="cc2-TH-2CD"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3N-My-Km0" userLabel="mangesh">
-                                                <rect key="frame" x="0.0" y="255" width="345" height="245"/>
-                                                <state key="normal" title="Button" image="mangesh"/>
-                                                <connections>
-                                                    <action selector="personPressed:" destination="ttE-f9-B7W" eventType="touchUpInside" id="eUz-2Q-iio"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="64J-hE-fdM"/>
-                                            <constraint firstAttribute="width" constant="345" id="Kog-Sv-Gbo"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="iyg-G8-wpp" firstAttribute="top" secondItem="8Gr-1M-ftf" secondAttribute="topMargin" id="1d2-Bn-cuu"/>
-                                    <constraint firstItem="xbH-5E-DDd" firstAttribute="trailing" secondItem="8Gr-1M-ftf" secondAttribute="trailing" constant="-35" id="6cy-gO-bSC"/>
-                                    <constraint firstItem="xbH-5E-DDd" firstAttribute="top" secondItem="0YZ-1S-ou3" secondAttribute="bottom" constant="21" id="JxQ-rq-S5z"/>
-                                    <constraint firstItem="iyg-G8-wpp" firstAttribute="trailing" secondItem="8Gr-1M-ftf" secondAttribute="trailing" constant="-154.5" id="KHE-72-niC"/>
-                                    <constraint firstItem="xbH-5E-DDd" firstAttribute="centerX" secondItem="8Gr-1M-ftf" secondAttribute="centerX" id="Q84-SZ-aKC"/>
-                                    <constraint firstItem="0YZ-1S-ou3" firstAttribute="top" secondItem="8Gr-1M-ftf" secondAttribute="top" constant="47" id="Qli-lz-GAv"/>
-                                    <constraint firstItem="xbH-5E-DDd" firstAttribute="centerY" secondItem="8Gr-1M-ftf" secondAttribute="centerY" constant="-26.5" id="RHd-nM-Sbo"/>
-                                    <constraint firstItem="xbH-5E-DDd" firstAttribute="bottom" secondItem="8Gr-1M-ftf" secondAttribute="bottom" constant="-169" id="djz-al-xjH"/>
-                                    <constraint firstItem="iyg-G8-wpp" firstAttribute="leading" secondItem="8Gr-1M-ftf" secondAttribute="leadingMargin" constant="10" id="dpS-hP-DWU"/>
-                                    <constraint firstItem="0YZ-1S-ou3" firstAttribute="leading" secondItem="8Gr-1M-ftf" secondAttribute="leading" constant="26" id="tB3-wn-54U"/>
-                                    <constraint firstAttribute="trailing" secondItem="0YZ-1S-ou3" secondAttribute="trailing" constant="34" id="xlS-WW-QE3"/>
-                                </constraints>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why'd we make CalNow?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-G8-wpp">
+                                <rect key="frame" x="20" y="77" width="336" height="23.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                <color key="textColor" red="0.9469569672" green="1" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the pictures of our founders to check out why!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YZ-1S-ou3">
+                                <rect key="frame" x="24" y="108" width="366" height="39.5"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-A8-KfV">
                                 <rect key="frame" x="20" y="39" width="215" height="30"/>
                                 <subviews>
@@ -175,15 +134,42 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-5E-DDd">
+                                <rect key="frame" x="34.5" y="163" width="345" height="580"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-Ec-cyu" userLabel="erik">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="269"/>
+                                        <state key="normal" image="erik"/>
+                                        <connections>
+                                            <action selector="personPressed:" destination="ttE-f9-B7W" eventType="touchUpInside" id="cc2-TH-2CD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3N-My-Km0" userLabel="mangesh">
+                                        <rect key="frame" x="0.0" y="311" width="345" height="269"/>
+                                        <state key="normal" title="Button" image="mangesh"/>
+                                        <connections>
+                                            <action selector="personPressed:" destination="ttE-f9-B7W" eventType="touchUpInside" id="eUz-2Q-iio"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="580" id="64J-hE-fdM"/>
+                                    <constraint firstAttribute="width" constant="345" id="Kog-Sv-Gbo"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="8Gr-1M-ftf" firstAttribute="width" secondItem="tOL-99-H7j" secondAttribute="width" id="Cn4-ds-291"/>
-                            <constraint firstItem="8Gr-1M-ftf" firstAttribute="top" secondItem="4dw-A8-KfV" secondAttribute="bottom" id="GYg-QD-oJo"/>
-                            <constraint firstItem="8Gr-1M-ftf" firstAttribute="centerX" secondItem="tOL-99-H7j" secondAttribute="centerX" id="d8h-3j-l9Z"/>
-                            <constraint firstItem="8Gr-1M-ftf" firstAttribute="bottom" secondItem="tOL-99-H7j" secondAttribute="bottom" id="oJK-o3-Uqh"/>
+                            <constraint firstItem="xbH-5E-DDd" firstAttribute="centerY" secondItem="tOL-99-H7j" secondAttribute="centerY" id="CI9-SR-VbK"/>
+                            <constraint firstItem="tOL-99-H7j" firstAttribute="trailing" secondItem="iyg-G8-wpp" secondAttribute="trailing" constant="58" id="ETd-bM-IW2"/>
+                            <constraint firstItem="xbH-5E-DDd" firstAttribute="centerX" secondItem="tOL-99-H7j" secondAttribute="centerX" id="Kg4-pU-UVX"/>
+                            <constraint firstItem="0YZ-1S-ou3" firstAttribute="top" secondItem="iyg-G8-wpp" secondAttribute="bottom" constant="7.5" id="PM7-A0-9VU"/>
+                            <constraint firstItem="0YZ-1S-ou3" firstAttribute="leading" secondItem="iyg-G8-wpp" secondAttribute="leading" constant="4" id="S6q-dY-UsZ"/>
                             <constraint firstItem="4dw-A8-KfV" firstAttribute="leading" secondItem="jDK-sE-byx" secondAttribute="leadingMargin" id="oMJ-Nu-aUw"/>
+                            <constraint firstItem="iyg-G8-wpp" firstAttribute="top" secondItem="4dw-A8-KfV" secondAttribute="bottom" constant="8" id="qac-Zt-wif"/>
+                            <constraint firstItem="0YZ-1S-ou3" firstAttribute="trailing" secondItem="tOL-99-H7j" secondAttribute="trailing" constant="-24" id="teg-J9-f08"/>
                             <constraint firstItem="4dw-A8-KfV" firstAttribute="top" secondItem="jDK-sE-byx" secondAttribute="topMargin" constant="-5" id="uFY-mm-MCv"/>
+                            <constraint firstItem="iyg-G8-wpp" firstAttribute="leading" secondItem="4dw-A8-KfV" secondAttribute="leading" id="xMK-QP-nNO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tOL-99-H7j"/>
                     </view>
@@ -195,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGY-MF-dT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="121"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="120.53571428571428"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="Dfo-MC-CDG">
@@ -206,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Xmm-bI-BDY">
-                                <rect key="frame" x="15" y="44" width="385.5" height="33"/>
+                                <rect key="frame" x="14.5" y="44" width="385" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QDr-c9-6EQ">
                                         <rect key="frame" x="0.0" y="0.0" width="122.5" height="33"/>
@@ -219,14 +205,14 @@
                                             <segue destination="ttE-f9-B7W" kind="show" identifier="backToAbout" id="NIu-Qy-ugP"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-w0-LFi">
-                                        <rect key="frame" x="131.5" y="0.0" width="122.5" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-w0-LFi">
+                                        <rect key="frame" x="131.5" y="0.0" width="122" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORZ-Q7-hUP">
-                                        <rect key="frame" x="263" y="0.0" width="122.5" height="33"/>
+                                        <rect key="frame" x="262.5" y="0.0" width="122.5" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Calendar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,26 +224,33 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ks-Rn-ham">
-                                <rect key="frame" x="87" y="85" width="240" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ks-Rn-ham" userLabel="BlurbStack">
+                                <rect key="frame" x="34.5" y="97" width="345" height="650"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xOn-O6-J7e">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="320"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSv-oM-4ds">
-                                        <rect key="frame" x="0.0" y="60" width="240" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="330" width="345" height="320"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="JUR-u5-sNZ"/>
+                                    <constraint firstAttribute="height" constant="650" id="TNL-WF-Sth"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Xmm-bI-BDY" firstAttribute="leading" secondItem="er5-bm-2rh" secondAttribute="leading" constant="15" id="Uzz-kd-5Sz"/>
-                            <constraint firstItem="Xmm-bI-BDY" firstAttribute="top" secondItem="er5-bm-2rh" secondAttribute="top" id="VJD-Dw-LCO"/>
+                            <constraint firstItem="Xmm-bI-BDY" firstAttribute="leading" secondItem="er5-bm-2rh" secondAttribute="leading" constant="14.5" id="9Yq-CD-vQq"/>
+                            <constraint firstItem="8ks-Rn-ham" firstAttribute="centerX" secondItem="er5-bm-2rh" secondAttribute="centerX" id="Fdr-h1-eVT"/>
+                            <constraint firstItem="Xmm-bI-BDY" firstAttribute="centerX" secondItem="er5-bm-2rh" secondAttribute="centerX" id="Y2Y-1l-zfs"/>
+                            <constraint firstItem="8ks-Rn-ham" firstAttribute="centerY" secondItem="er5-bm-2rh" secondAttribute="centerY" constant="-31" id="dxl-XU-Tkg"/>
+                            <constraint firstItem="er5-bm-2rh" firstAttribute="trailing" secondItem="Xmm-bI-BDY" secondAttribute="trailing" constant="14.5" id="kGX-hY-lga"/>
+                            <constraint firstItem="Xmm-bI-BDY" firstAttribute="top" secondItem="er5-bm-2rh" secondAttribute="top" id="vd2-QS-cEs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="er5-bm-2rh"/>
                     </view>

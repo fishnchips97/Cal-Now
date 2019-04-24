@@ -19,6 +19,7 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        personImage.layer.cornerRadius = 10
         if personTag == 0 {
             headerName.text = "Erik"
             personImage.image = #imageLiteral(resourceName: "erik")
