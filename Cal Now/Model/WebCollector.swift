@@ -23,27 +23,35 @@ class WebCollector {
              wten
     }
     
-    var websites = [String:String]()
+    var websites = [String]()
     
     init() {
-        websites["https://inforib.com/edu/uc-berkeley-academic-calendar"] = ""
-        websites["https://www.thegreektheatreberkeley.com"] = ""
+        websites.append("https://inforib.com/edu/uc-berkeley-academic-calendar")
+        websites.append("https://www.thegreektheatreberkeley.com")
         for sport in sports.allCases {
-            websites["https://calbears.com/schedule.aspx?path=\(sport.rawValue)"] = ""
+            websites.append("https://calbears.com/schedule.aspx?path=\(sport.rawValue)")
         }
     }
     
-    func parseWebsites() {
-        for site in websites {
-            if site.key.contains("inforib.com") {
-                print("inforib")
-            } else if site.key.contains("greektheatre") {
-                print("theatre")
-            } else if site.key.contains("calbears.com"){
-                print("go bears")
-            }
-            print(site.value)
+    func parseWebsite(html: String) {
+        if html.contains("inforib.com") {
+            var temp = html.split(separator: "<")
+            temp = temp.filter({$0.contains("<p>")})
+//            print(html)
+            print(temp)
+            
+            temp.removeSubrange(temp.startIndex..<temp.startIndex)
+        } else if html.contains("greektheatre") {
+            print("theater")
+        } else if html.contains("calbears.com"){
+            print("go bears")
         }
+//        if html != "" {
+//            print("good")
+//        } else {
+//            print("uh")
+//        }
+        
     }
     
     

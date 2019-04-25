@@ -16,21 +16,20 @@ class MainCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         for site in collector.websites {
-            let url = URL(string: site.key)
+            let url = URL(string: site)
+            
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
                 if error != nil {
-                    print(site.key)
+                    print(site)
                     print(error ?? "Error")
                 } else {
                     let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 //                    print(htmlContent)
-                    self.collector.websites[site.key] = htmlContent?.substring(from: 0)
+                    self.collector.parseWebsite(html: htmlContent?.substring(from: 0) ?? "o")
                 }
             }
             task.resume()
-            
         }
-        collector.parseWebsites()
         // Do any additional setup after loading the view.
     }
     
