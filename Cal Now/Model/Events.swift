@@ -8,4 +8,7 @@
 
 import Foundation
 
-var Events = [Date:Event]()
+class Events {
+    var Events = [Date:Event]()
+    var categories = [Event.EventType]()
+}

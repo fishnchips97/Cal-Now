@@ -35,7 +35,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJu-Za-tR6">
                                         <rect key="frame" x="209" y="46.5" width="205" height="86.5"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="75"/>
-                                        <color key="textColor" red="0.99923831220000003" green="0.86847323180000002" blue="0.0017306855880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.99215686274509807" green="0.70980392156862748" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.19607843137254902" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="AiN-Ab-m5N" firstAttribute="centerY" secondItem="lwh-4m-PNd" secondAttribute="centerY" multiplier="0.4" id="3M7-aQ-iIc"/>
                             <constraint firstItem="AiN-Ab-m5N" firstAttribute="centerX" secondItem="lwh-4m-PNd" secondAttribute="centerX" constant="-16" id="FPR-e1-8DH"/>

@@ -12,6 +12,8 @@
 		9E07044B2269446300594FE5 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E07044A2269446300594FE5 /* AboutPageViewController.swift */; };
 		9E9CE432226FE55300E3CE37 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9CE431226FE55300E3CE37 /* PersonViewController.swift */; };
 		9ED6DDA82272604000986303 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDA72272604000986303 /* FilterViewController.swift */; };
+		9ED6DDAB2272728F00986303 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDAA2272728F00986303 /* FilterCell.swift */; };
+		9ED6DDAE227272C900986303 /* MainCalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDAD227272C900986303 /* MainCalendarEventCell.swift */; };
 		D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5122604BF900795B7B /* AppDelegate.swift */; };
 		D9E53C5722604BF900795B7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5522604BF900795B7B /* Main.storyboard */; };
 		D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */; };
@@ -29,6 +31,8 @@
 		9E07044A2269446300594FE5 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
 		9E9CE431226FE55300E3CE37 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		9ED6DDA72272604000986303 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		9ED6DDAA2272728F00986303 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		9ED6DDAD227272C900986303 /* MainCalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarEventCell.swift; sourceTree = "<group>"; };
 		D9E53C4E22604BF900795B7B /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E53C5122604BF900795B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9E53C5622604BF900795B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +64,24 @@
 				DE4937BBCDE123210F2186F0 /* Pods_Cal_Now.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9ED6DDA92272726600986303 /* Filter View */ = {
+			isa = PBXGroup;
+			children = (
+				9ED6DDA72272604000986303 /* FilterViewController.swift */,
+				9ED6DDAA2272728F00986303 /* FilterCell.swift */,
+			);
+			path = "Filter View";
+			sourceTree = "<group>";
+		};
+		9ED6DDAC227272A100986303 /* Main Calendar View  */ = {
+			isa = PBXGroup;
+			children = (
+				9E070446226942B000594FE5 /* MainCalendarViewController.swift */,
+				9ED6DDAD227272C900986303 /* MainCalendarEventCell.swift */,
+			);
+			path = "Main Calendar View ";
 			sourceTree = "<group>";
 		};
 		D9E53C4522604BF900795B7B = {
@@ -116,10 +138,10 @@
 		D9E53C6E22604E3200795B7B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9ED6DDA72272604000986303 /* FilterViewController.swift */,
+				9ED6DDAC227272A100986303 /* Main Calendar View  */,
+				9ED6DDA92272726600986303 /* Filter View */,
 				9E9CE431226FE55300E3CE37 /* PersonViewController.swift */,
 				9E07044A2269446300594FE5 /* AboutPageViewController.swift */,
-				9E070446226942B000594FE5 /* MainCalendarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +261,8 @@
 				D9E53C6B22604E1900795B7B /* Event.swift in Sources */,
 				9E070447226942B000594FE5 /* MainCalendarViewController.swift in Sources */,
 				9E07044B2269446300594FE5 /* AboutPageViewController.swift in Sources */,
+				9ED6DDAB2272728F00986303 /* FilterCell.swift in Sources */,
+				9ED6DDAE227272C900986303 /* MainCalendarEventCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
