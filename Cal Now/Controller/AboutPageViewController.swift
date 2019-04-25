@@ -19,7 +19,9 @@ class AboutPageViewController: UIViewController {
         super.viewDidLoad()
 
         erikButton.layer.cornerRadius = 25
+        erikButton.clipsToBounds = true
         mangeshButton.layer.cornerRadius = 25
+        mangeshButton.clipsToBounds = true
         
         // Do any additional setup after loading the view.
     }
