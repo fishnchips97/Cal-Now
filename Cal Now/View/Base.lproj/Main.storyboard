@@ -10,20 +10,75 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="Azm-UE-asl">
             <objects>
-                <viewController id="gXF-UM-wVS" sceneMemberID="viewController">
+                <viewController id="gXF-UM-wVS" customClass="FilterViewController" customModule="Cal_Now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q7A-D6-xU4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wWa-y3-Zr0" userLabel="TopStackView">
+                                <rect key="frame" x="15" y="44" width="384" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMd-Bu-Nr1">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filterDone:" destination="gXF-UM-wVS" eventType="touchUpInside" id="wcu-gf-zfJ"/>
+                                            <segue destination="TA4-Yw-p2C" kind="show" identifier="backtoCalendar" id="mgS-hz-cL8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-LI-U04">
+                                        <rect key="frame" x="128" y="0.0" width="128" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-0U-RPO">
+                                        <rect key="frame" x="256" y="0.0" width="128" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cuu-Bn-dFh">
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="760" id="2sn-pK-r45"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yzz-80-avG">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yzz-80-avG" id="TWF-N6-6oe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wWa-y3-Zr0" firstAttribute="centerX" secondItem="cH9-2o-tWb" secondAttribute="centerX" id="6h2-7h-Nkk"/>
+                            <constraint firstItem="cuu-Bn-dFh" firstAttribute="top" secondItem="wWa-y3-Zr0" secondAttribute="bottom" constant="8" symbolic="YES" id="HlE-cR-hTf"/>
+                            <constraint firstItem="wWa-y3-Zr0" firstAttribute="leading" secondItem="cH9-2o-tWb" secondAttribute="leading" constant="15" id="LQX-Kd-IQf"/>
+                            <constraint firstItem="cuu-Bn-dFh" firstAttribute="leading" secondItem="Q7A-D6-xU4" secondAttribute="leading" id="nJk-8i-GhE"/>
+                            <constraint firstItem="wWa-y3-Zr0" firstAttribute="top" secondItem="cH9-2o-tWb" secondAttribute="top" id="tU2-No-m1z"/>
+                            <constraint firstItem="cuu-Bn-dFh" firstAttribute="centerX" secondItem="cH9-2o-tWb" secondAttribute="centerX" id="zqs-pE-kIg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cH9-2o-tWb"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7t-cq-Mg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="797"/>
+            <point key="canvasLocation" x="256.52173913043481" y="1135.0446428571429"/>
         </scene>
         <!--Main Calendar View Controller-->
         <scene sceneID="7wv-5T-TR9">
@@ -70,6 +125,10 @@
                                                 <state key="normal" title="Filter">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterButtonPressed:" destination="TA4-Yw-p2C" eventType="touchUpInside" id="eY1-aq-T4s"/>
+                                                    <segue destination="gXF-UM-wVS" kind="show" identifier="toFilter" id="qlu-ec-0qQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-9E-XfJ">
                                                 <rect key="frame" x="138" y="0.0" width="138" height="33"/>
@@ -106,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXM-Ck-XHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="121"/>
+            <point key="canvasLocation" x="257" y="361"/>
         </scene>
         <!--About Page View Controller-->
         <scene sceneID="BnE-um-ZZK">
@@ -117,22 +176,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why'd we make CalNow?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-G8-wpp">
-                                <rect key="frame" x="20" y="77" width="336" height="23.5"/>
+                                <rect key="frame" x="20" y="80" width="336" height="23.5"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" red="0.9469569672" green="1" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the pictures of our founders to check out why!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YZ-1S-ou3">
-                                <rect key="frame" x="24" y="108" width="366" height="39.5"/>
+                                <rect key="frame" x="24" y="111" width="366" height="39.5"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-A8-KfV">
-                                <rect key="frame" x="20" y="39" width="215" height="30"/>
+                                <rect key="frame" x="20" y="39" width="215" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8D-RU-89m">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -142,7 +202,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-dl-Fw1">
-                                        <rect key="frame" x="165" y="0.0" width="50" height="30"/>
+                                        <rect key="frame" x="165" y="0.0" width="50" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -286,6 +346,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8o4-mP-clX"/>
-        <segue reference="Ad1-O0-X1h"/>
+        <segue reference="mgS-hz-cL8"/>
     </inferredMetricsTieBreakers>
 </document>

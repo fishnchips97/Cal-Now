@@ -38,6 +38,11 @@ class MainCalendarViewController: UIViewController {
         performSegue(withIdentifier: "goToAboutPage", sender: sender)
     }
     
+    @IBAction func filterButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toFilter", sender: sender)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

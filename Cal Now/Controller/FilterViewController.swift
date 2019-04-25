@@ -16,7 +16,10 @@ class FilterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func filterDone(_ sender: UIButton) {
+        performSegue(withIdentifier: "backtoCalendar", sender: sender)
+    }
+    
     /*
     // MARK: - Navigation
 
