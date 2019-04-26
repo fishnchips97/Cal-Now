@@ -9,6 +9,15 @@
 import Foundation
 
 class Events {
-    var Events = [Date:Event]()
+    var Events = [Event]()
+    var dateEvents = [Date:Event]()
     var categories = [Event.EventType]()
 }
+
+//var Events = [Event]()
+//
+//var categories: [String] {
+//    get {
+//        return Event.typesString + WebCollector.sportsStrings
+//    }
+//}

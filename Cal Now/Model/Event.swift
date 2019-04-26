@@ -11,19 +11,32 @@ import UIKit
 
 class Event {
     
-    enum EventType {
+    enum EventType: String, CaseIterable {
         case Academic, Sport, Concert
     }
     
-    var date: Date?
+    var start: Date?
+    var end: Date?
     var image: UIImage?
     var eventLink: String?
     var description: String?
     var type: EventType
+    static public var typesString: [String] {
+        get {
+            var result = [String]()
+            for elem in EventType.allCases {
+                result.append(elem.rawValue)
+            }
+            return result
+        }
+    }
     
-    init(date: Date?, image: UIImage?, eventLink: String?, type: EventType, description: String?) {
-        if let dat = date {
-            self.date = dat
+    init(start: Date?, end: Date?, image: UIImage?, eventLink: String?, type: EventType, description: String?) {
+        if let strt = start {
+            self.start = strt
+        }
+        if let ed = end {
+            self.end = ed
         }
         if let img = image {
             self.image = img

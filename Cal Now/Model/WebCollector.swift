@@ -22,6 +22,15 @@ class WebCollector {
              mten,
              wten
     }
+    static public var sportsStrings: [String] {
+        get {
+            var result = [String]()
+            for elem in sports.allCases {
+                result.append(elem.rawValue)
+            }
+            return result
+        }
+    }
     
     var websites = [String]()
     
@@ -35,6 +44,7 @@ class WebCollector {
     
     func parseWebsite(html: String) {
 //        print(html)
+//        var replaceMe = [Event]()
         
         
         var values = [String]()
@@ -76,22 +86,38 @@ class WebCollector {
             }
         }
         result = Array(Set(result))
-        var tempEvent: Event
+        var tempEvent : Event
         for elem in result {
             if !elem.contains(subString: " - ") {
                 let tempDescription = elem.prefix(upToString: ", ")
 //                print(tempDescription)
                 let tempLink = elem.suffix(afterString: ", ")
 //                print(tempLink)
-                tempEvent = Event(date: nil, image: nil, eventLink: tempLink, type: .Academic, description: tempDescription)
-            } else if elem.subStringCount(subString: "-") == 2 {
-                
-            } else if elem.subStringCount(subString: "-") == 1 {
-                
+                tempEvent = Event(start: nil, end: nil, image: nil, eventLink: tempLink, type: .Academic, description: tempDescription)
+            } else {
+                let description = elem.prefix(upToString: " - ")
+                let rest = elem.suffix(afterString: " - ")
+                let formatter = DateFormatter()
+                if rest.contains(subString: "-") {
+                    var date1str = rest.prefix(upToString: "-")
+                    let date2str = rest.suffix(afterString: "-")
+                    date1str += ", " + String(date2str.suffix(4))
+                    formatter.dateFormat = "EEEE, MMMM d, yyyy"
+                    let date1 = formatter.date(from: date1str)
+                    let date2 = formatter.date(from: date2str)
+                    tempEvent = Event(start: date1, end: date2, image: nil, eventLink: nil, type: .Academic, description: description)
+                } else {
+                    let date1str = rest
+                    formatter.dateFormat = "EEEE, MMMM d, yyyy"
+                    let date1 = formatter.date(from: date1str)
+                    tempEvent = Event(start: date1, end: nil, image: nil, eventLink: nil, type: .Academic, description: description)
+                }
             }
 
-            print(elem)
+//            print(elem)
+//            replaceMe.append(tempEvent)
         }
+//        print(replaceMe)
             
             
         } else if html.contains("greektheatre") {
