@@ -53,18 +53,34 @@
                                     <constraint firstAttribute="height" constant="760" id="2sn-pK-r45"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Yzz-80-avG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categories" id="Yzz-80-avG" customClass="FilterCell" customModule="Cal_Now" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yzz-80-avG" id="TWF-N6-6oe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQz-56-UCX">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CQz-56-UCX" firstAttribute="top" secondItem="TWF-N6-6oe" secondAttribute="top" constant="11" id="0TR-yn-GGI"/>
+                                                <constraint firstItem="CQz-56-UCX" firstAttribute="leading" secondItem="TWF-N6-6oe" secondAttribute="leading" constant="20" id="SWf-am-9UL"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CQz-56-UCX" secondAttribute="trailing" constant="20" symbolic="YES" id="UvL-HF-Hrk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="filterCategory" destination="CQz-56-UCX" id="QJo-Bw-k2D"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.19607843137254902" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wWa-y3-Zr0" firstAttribute="centerX" secondItem="cH9-2o-tWb" secondAttribute="centerX" id="6h2-7h-Nkk"/>
                             <constraint firstItem="cuu-Bn-dFh" firstAttribute="top" secondItem="wWa-y3-Zr0" secondAttribute="bottom" constant="8" symbolic="YES" id="HlE-cR-hTf"/>
@@ -75,10 +91,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cH9-2o-tWb"/>
                     </view>
+                    <connections>
+                        <outlet property="filterTableView" destination="cuu-Bn-dFh" id="eXQ-o5-9ai"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7t-cq-Mg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256.52173913043481" y="1135.0446428571429"/>
+            <point key="canvasLocation" x="257" y="-434"/>
         </scene>
         <!--Main Calendar View Controller-->
         <scene sceneID="7wv-5T-TR9">
@@ -106,7 +125,7 @@
                                         <rect key="frame" x="0.0" y="39" width="414" height="719"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Event Cell" id="Tc0-Bj-y4u">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentEvent" id="Tc0-Bj-y4u">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tc0-Bj-y4u" id="MZO-BH-8yG">
@@ -153,7 +172,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.19607843137254902" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Wet-2H-E5b" firstAttribute="centerY" secondItem="hMn-ai-4rO" secondAttribute="centerY" id="Clw-Qa-0VB"/>
                             <constraint firstItem="Wet-2H-E5b" firstAttribute="width" secondItem="txb-a0-9EF" secondAttribute="width" id="fF3-aA-HwN"/>
@@ -165,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXM-Ck-XHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="361"/>
+            <point key="canvasLocation" x="267" y="361"/>
         </scene>
         <!--About Page View Controller-->
         <scene sceneID="BnE-um-ZZK">
@@ -178,11 +197,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why'd we make CalNow?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-G8-wpp">
                                 <rect key="frame" x="20" y="80" width="336" height="23.5"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
-                                <color key="textColor" red="0.9469569672" green="1" blue="0.00033646567799999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.99215686274509807" green="0.70980392156862748" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on the pictures of our founders to check out why!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YZ-1S-ou3">
-                                <rect key="frame" x="24" y="111" width="366" height="39.5"/>
+                                <rect key="frame" x="24" y="111.5" width="366" height="39.5"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -210,7 +229,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="xbH-5E-DDd">
-                                <rect key="frame" x="34.5" y="163" width="345" height="580"/>
+                                <rect key="frame" x="34.5" y="197" width="345" height="580"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4q-Ec-cyu" userLabel="erik">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="269"/>
@@ -233,12 +252,12 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.19607843137254902" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="xbH-5E-DDd" firstAttribute="centerY" secondItem="tOL-99-H7j" secondAttribute="centerY" id="CI9-SR-VbK"/>
+                            <constraint firstItem="xbH-5E-DDd" firstAttribute="centerY" secondItem="tOL-99-H7j" secondAttribute="centerY" constant="34" id="CI9-SR-VbK"/>
                             <constraint firstItem="tOL-99-H7j" firstAttribute="trailing" secondItem="iyg-G8-wpp" secondAttribute="trailing" constant="58" id="ETd-bM-IW2"/>
                             <constraint firstItem="xbH-5E-DDd" firstAttribute="centerX" secondItem="tOL-99-H7j" secondAttribute="centerX" id="Kg4-pU-UVX"/>
-                            <constraint firstItem="0YZ-1S-ou3" firstAttribute="top" secondItem="iyg-G8-wpp" secondAttribute="bottom" constant="7.5" id="PM7-A0-9VU"/>
+                            <constraint firstItem="0YZ-1S-ou3" firstAttribute="top" secondItem="iyg-G8-wpp" secondAttribute="bottom" constant="8" id="PM7-A0-9VU"/>
                             <constraint firstItem="0YZ-1S-ou3" firstAttribute="leading" secondItem="iyg-G8-wpp" secondAttribute="leading" constant="4" id="S6q-dY-UsZ"/>
                             <constraint firstItem="4dw-A8-KfV" firstAttribute="leading" secondItem="jDK-sE-byx" secondAttribute="leadingMargin" id="oMJ-Nu-aUw"/>
                             <constraint firstItem="iyg-G8-wpp" firstAttribute="top" secondItem="4dw-A8-KfV" secondAttribute="bottom" constant="8" id="qac-Zt-wif"/>
@@ -256,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGY-MF-dT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053.6231884057972" y="120.53571428571428"/>
+            <point key="canvasLocation" x="1505.7971014492755" y="360.9375"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="Dfo-MC-CDG">
@@ -318,7 +337,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.19607843137254902" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xmm-bI-BDY" firstAttribute="leading" secondItem="er5-bm-2rh" secondAttribute="leading" constant="14.5" id="9Yq-CD-vQq"/>
                             <constraint firstItem="8ks-Rn-ham" firstAttribute="centerX" secondItem="er5-bm-2rh" secondAttribute="centerX" id="Fdr-h1-eVT"/>
@@ -337,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSC-9h-Gxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836.2318840579712" y="120.53571428571428"/>
+            <point key="canvasLocation" x="2758" y="361"/>
         </scene>
     </scenes>
     <resources>
