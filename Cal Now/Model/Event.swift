@@ -51,4 +51,26 @@ class Event {
         }
     }
     
+    func printEvent() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MMM-yyyy"
+        if let strt = self.start {
+            let start = formatter.string(from: strt)
+            print("Start: \(start)")
+        } else {
+            print("Start: nil")
+        }
+        if let nd = self.end {
+            let end = formatter.string(from: nd)
+            print("End: \(end)")
+        } else {
+            print("End: nil")
+        }
+        
+        print("EventLink: \(self.eventLink ?? "nil")")
+        print("Description: \(self.description ?? "nil")")
+        
+        print("Type: \(self.type.rawValue)")
+    }
+    
 }

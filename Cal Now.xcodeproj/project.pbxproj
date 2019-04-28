@@ -14,6 +14,7 @@
 		9ED6DDA82272604000986303 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDA72272604000986303 /* FilterViewController.swift */; };
 		9ED6DDAB2272728F00986303 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDAA2272728F00986303 /* FilterCell.swift */; };
 		9ED6DDAE227272C900986303 /* MainCalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6DDAD227272C900986303 /* MainCalendarEventCell.swift */; };
+		D9DFD6182275782B00B12953 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DFD6172275782B00B12953 /* EventsList.swift */; };
 		D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5122604BF900795B7B /* AppDelegate.swift */; };
 		D9E53C5722604BF900795B7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E53C5522604BF900795B7B /* Main.storyboard */; };
 		D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9E53C5822604BF900795B7B /* Cal_Now.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		9ED6DDA72272604000986303 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9ED6DDAA2272728F00986303 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		9ED6DDAD227272C900986303 /* MainCalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarEventCell.swift; sourceTree = "<group>"; };
+		D9DFD6172275782B00B12953 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
 		D9E53C4E22604BF900795B7B /* Cal Now.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cal Now.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E53C5122604BF900795B7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9E53C5622604BF900795B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				D9E53C6722604E1900795B7B /* WebCollector.swift */,
 				D9E53C6822604E1900795B7B /* Event.swift */,
 				D9E53C6922604E1900795B7B /* Events.swift */,
+				D9DFD6172275782B00B12953 /* EventsList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				D9E53C5A22604BF900795B7B /* Cal_Now.xcdatamodeld in Sources */,
 				D9E53C5222604BF900795B7B /* AppDelegate.swift in Sources */,
 				9ED6DDA82272604000986303 /* FilterViewController.swift in Sources */,
+				D9DFD6182275782B00B12953 /* EventsList.swift in Sources */,
 				9E9CE432226FE55300E3CE37 /* PersonViewController.swift in Sources */,
 				D9E53C6A22604E1900795B7B /* WebCollector.swift in Sources */,
 				D9E53C6B22604E1900795B7B /* Event.swift in Sources */,

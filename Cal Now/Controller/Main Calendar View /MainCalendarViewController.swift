@@ -29,7 +29,10 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate {
                 } else {
                     let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 //                    print(htmlContent)
-                    self.collector.parseWebsite(html: htmlContent?.substring(from: 0) ?? "o")
+                    if let content = htmlContent?.substring(from: 0) {
+                        self.collector.parseWebsite(html: content)
+                    }
+                    
                 }
             }
             task.resume()
