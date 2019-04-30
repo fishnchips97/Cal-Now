@@ -11,6 +11,7 @@ import UIKit
 class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let allEvents = Events()
+    var interestedCategories: [Event.EventType] = []
     
     @IBOutlet weak var filterTableView: UITableView!
     
@@ -40,12 +41,31 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
         cell.contentView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        //Try to make text color white when you change cell background color to green
+        interestedCategories.append(allEvents.categories[indexPath.row])
         //tableView.allowsMultipleSelection = true
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        removeSpecific(allEvents.categories[indexPath.row])
     }
     
     
     @IBAction func filterDone(_ sender: UIButton) {
         performSegue(withIdentifier: "backtoCalendar", sender: sender)
+    }
+    
+    func removeSpecific(_ eventCategory: Event.EventType) {
+        var removeIndex: Int = 0
+        for index in 0..<interestedCategories.count {
+            if eventCategory == interestedCategories[index] {
+                removeIndex = index
+                break
+            }
+        }
+        interestedCategories.remove(at: removeIndex)
     }
     
     /*
