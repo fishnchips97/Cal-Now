@@ -9,15 +9,19 @@
 
 import UIKit
 
-class MainCalendarViewController: UIViewController {
+class MainCalendarViewController: UIViewController, XMLParserDelegate {
 
     let collector = WebCollector()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         for site in collector.websites {
+//            print(site)
             let url = URL(string: site)
-            
+
             let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
                 if error != nil {
                     print(site)
@@ -25,7 +29,10 @@ class MainCalendarViewController: UIViewController {
                 } else {
                     let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 //                    print(htmlContent)
-                    self.collector.parseWebsite(html: htmlContent?.substring(from: 0) ?? "o")
+                    if let content = htmlContent?.substring(from: 0) {
+                        self.collector.parseWebsite(html: content)
+                    }
+                    
                 }
             }
             task.resume()
@@ -40,7 +47,6 @@ class MainCalendarViewController: UIViewController {
     @IBAction func filterButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toFilter", sender: sender)
     }
-    
     
     /*
     // MARK: - Navigation

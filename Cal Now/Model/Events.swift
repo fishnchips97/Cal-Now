@@ -9,6 +9,9 @@
 import Foundation
 
 class Events {
-    var Events = [Date:Event]()
+    var Events = [Event]()
+    var dateEvents = [Date:Event]()
     var categories = [Event.EventType]()
 }
+
+
