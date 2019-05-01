@@ -48,6 +48,8 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate {
         performSegue(withIdentifier: "toFilter", sender: sender)
     }
     
+    @IBAction func unwindToCalendar(segue: UIStoryboardSegue) { }
+    
     /*
     // MARK: - Navigation
 

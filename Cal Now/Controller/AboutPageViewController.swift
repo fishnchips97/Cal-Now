@@ -27,7 +27,7 @@ class AboutPageViewController: UIViewController {
     }
     
     @IBAction func leaveAbout(_ sender: UIButton) {
-        performSegue(withIdentifier: "leaveAbout", sender: sender)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func personPressed(_ sender: UIButton) {

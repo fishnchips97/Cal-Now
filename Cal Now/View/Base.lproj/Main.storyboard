@@ -28,8 +28,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="filterDone:" destination="gXF-UM-wVS" eventType="touchUpInside" id="wcu-gf-zfJ"/>
-                                            <segue destination="TA4-Yw-p2C" kind="show" identifier="backtoCalendar" id="mgS-hz-cL8"/>
+                                            <action selector="filterDone:" destination="gXF-UM-wVS" eventType="touchUpInside" id="J48-Wt-6SG"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-LI-U04">
@@ -97,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7t-cq-Mg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="-434"/>
+            <point key="canvasLocation" x="1070" y="50"/>
         </scene>
         <!--Main Calendar View Controller-->
         <scene sceneID="7wv-5T-TR9">
@@ -146,7 +145,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="filterButtonPressed:" destination="TA4-Yw-p2C" eventType="touchUpInside" id="eY1-aq-T4s"/>
-                                                    <segue destination="gXF-UM-wVS" kind="show" identifier="toFilter" id="qlu-ec-0qQ"/>
+                                                    <segue destination="gXF-UM-wVS" kind="presentation" identifier="toFilter" id="Wmd-t0-bag"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUt-9E-XfJ">
@@ -164,7 +163,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="aboutButtonPressed:" destination="TA4-Yw-p2C" eventType="touchUpInside" id="ZpT-gA-NHK"/>
-                                                    <segue destination="ttE-f9-B7W" kind="show" identifier="goToAboutPage" id="8o4-mP-clX"/>
+                                                    <segue destination="ttE-f9-B7W" kind="presentation" identifier="goToAboutPage" id="LZQ-zL-OIm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -217,7 +216,6 @@
                                         </state>
                                         <connections>
                                             <action selector="leaveAbout:" destination="ttE-f9-B7W" eventType="touchUpInside" id="jxm-RE-yOA"/>
-                                            <segue destination="TA4-Yw-p2C" kind="show" identifier="leaveAbout" id="oSu-41-jfu"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-dl-Fw1">
@@ -270,12 +268,12 @@
                     <connections>
                         <outlet property="erikButton" destination="R4q-Ec-cyu" id="O8U-FT-yVa"/>
                         <outlet property="mangeshButton" destination="y3N-My-Km0" id="zI4-JJ-7Qx"/>
-                        <segue destination="TwO-fi-GNS" kind="show" identifier="personPressed" id="hYd-av-ENB"/>
+                        <segue destination="TwO-fi-GNS" kind="presentation" identifier="personPressed" id="vkO-XD-kvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGY-MF-dT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505.7971014492755" y="360.9375"/>
+            <point key="canvasLocation" x="1071" y="696"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="Dfo-MC-CDG">
@@ -296,7 +294,6 @@
                                         </state>
                                         <connections>
                                             <action selector="leavePerson:" destination="TwO-fi-GNS" eventType="touchUpInside" id="rEc-GK-gZ4"/>
-                                            <segue destination="ttE-f9-B7W" kind="show" identifier="backToAbout" id="NIu-Qy-ugP"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person's Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5F-w0-LFi">
@@ -313,7 +310,6 @@
                                         </state>
                                         <connections>
                                             <action selector="directToCalendar:" destination="TwO-fi-GNS" eventType="touchUpInside" id="prA-Eq-bHg"/>
-                                            <segue destination="TA4-Yw-p2C" kind="show" identifier="backToCalendar" id="Ad1-O0-X1h"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -352,19 +348,17 @@
                         <outlet property="headerName" destination="G5F-w0-LFi" id="etm-xl-c9T"/>
                         <outlet property="personBlurb" destination="YSv-oM-4ds" id="c2O-VN-48Q"/>
                         <outlet property="personImage" destination="xOn-O6-J7e" id="mji-Ir-UgU"/>
+                        <segue destination="88o-cZ-aRY" kind="unwind" identifier="unwindToCalendar" unwindAction="unwindToCalendarWithSegue:" id="mRm-vP-Pwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSC-9h-Gxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="88o-cZ-aRY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2758" y="361"/>
+            <point key="canvasLocation" x="1870" y="696"/>
         </scene>
     </scenes>
     <resources>
         <image name="erik" width="280" height="280"/>
         <image name="mangesh" width="2941" height="3390"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="8o4-mP-clX"/>
-        <segue reference="mgS-hz-cL8"/>
-    </inferredMetricsTieBreakers>
 </document>

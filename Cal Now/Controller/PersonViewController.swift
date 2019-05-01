@@ -34,11 +34,11 @@ class PersonViewController: UIViewController {
     }
     
     @IBAction func leavePerson(_ sender: UIButton) {
-        performSegue(withIdentifier: "backToAbout", sender: sender)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func directToCalendar(_ sender: UIButton) {
-        performSegue(withIdentifier: "backToCalendar", sender: sender)
+        performSegue(withIdentifier: "unwindToCalendar", sender: sender)
     }
     
     

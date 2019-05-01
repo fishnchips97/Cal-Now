@@ -54,7 +54,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func filterDone(_ sender: UIButton) {
-        performSegue(withIdentifier: "backtoCalendar", sender: sender)
+        dismiss(animated: true, completion: nil)
     }
     
     func removeSpecific(_ eventCategory: Event.EventType) {
