@@ -11,65 +11,47 @@ import WebKit
 
 class WebCollector {
     
-    enum format {
-        case Academic, Sport, Concert
-    }
-    
-    enum sports : String, CaseIterable {
-        case baseball,
-             softball,
-             track,
-             mten,
-             wten
-    }
-    static public var sportsStrings: [String] {
-        get {
-            var result = [String]()
-            for elem in sports.allCases {
-                result.append(elem.rawValue)
-            }
-            return result
-        }
-    }
-    
     var websites = [String]()
     
     init() {
         websites.append("https://inforib.com/edu/uc-berkeley-academic-calendar")
         websites.append("https://www.thegreektheatreberkeley.com/events/")
-        for sport in sports.allCases {
-            websites.append("https://calbears.com/schedule.aspx?path=\(sport.rawValue)")
+        for sport in Event.sportTypeStrings {
+            websites.append("https://calbears.com/schedule.aspx?path=\(sport)")
         }
     }
     
     var failedLoads = 0
     var loads = 0
-    func parseWebsite(html: String) {
+    func parseWebsite(html: String, site: String) {
 //        print(html)
 //        var replaceMe = [Event]()
         loads += 1
         
         
-        if html.contains("inforib.com") {
+        if site.contains("inforib.com") {
             print("academic")
             academicParse(htmlToParse: html)
             
                 
                 
-        } else if html.contains("greektheatre") {
+        } else if site.contains("greektheatre") {
             print("theater")
             theaterParse(htmlToParse: html)
 //            print(html)
-        } else if html.contains("calbears.com"){
+        } else if site.contains("calbears.com"){
             print("go bears")
-//            sportParse(htmlToParse: html)
+            let sportString = site.suffix(afterString: "https://calbears.com/schedule.aspx?path=")
+
+            sportParse(htmlToParse: html, sport: sportString)
         }
         if (loads - failedLoads) == websites.count {
             print("done")
-            for event in EventsList {
-//                print()
-//                event.printEvent()
-            }
+//            for event in EventsList {
+////                print()
+////                event.printEvent()
+//            }
+            print("\(EventsList.count) events")
         }
         
     }
@@ -179,33 +161,57 @@ func theaterParse(htmlToParse: String) {
     }
     
 }
-func sportParse(htmlToParse: String) {
+func sportParse(htmlToParse: String, sport: String) {
 //    print(htmlToParse)
 
-    let eventStrings = htmlToParse.wordsBetween(
+    var eventStrings = htmlToParse.wordsBetween(
         start: "opponent-date",
-        end: "game-links"
+        end: "Watch</a>"
     )
+//    eventStrings += htmlToParse.wordsBetween(
+//        start: "opponent-date",
+//        end: "Recap</a>"
+//    )
 
     for elem in eventStrings {
 //        print(elem)
+
+        let dateAndTime = elem.wordsBetween(start: "<span>", end: "</span>")
+        let vs = elem.wordsBetween(start: "<span class=\"sidearm-schedule-game-home\">", end: "</span>")
+        let at = elem.wordsBetween(start: "<span class=\"sidearm-schedule-game-away\">", end: "</span>")
+        let possibleTitles = elem.wordsBetween(start: "target=\"_blank\">", end: "</a>")
+//        var possibleYears = elem.wordsBetween(start: "on ", end: "\">")
+//        possibleYears = possibleYears.filter({ (str) -> Bool in
+//            str.contains(subString: " at ")
+//        })
+//        for n in possibleYears {
+//            print(n)
+//        }
         
-        let dayAndTime = elem.firstWordBetween(
-            start: "<span>",
-            end: " PT"
-        )
-        let day = dayAndTime.prefix(upToString: " (")
-        let time = dayAndTime.suffix(afterString: "<span>")
-        if !day.isEmpty {
-            print(day)
+        if dateAndTime.count > 1 && possibleTitles.count > 0 {
+            var dateString = dateAndTime[0]
+            dateString = dateString.prefix(upToString: " (")
+            let time = dateAndTime[1]
+            var title = possibleTitles[0]
+            if !vs.isEmpty {
+                title = vs[0] + " " + title
+            } else if !at.isEmpty {
+                title = at[0] + " " + title
+            }
+            print("date: \(dateString)")
+            print("time: \(time)")
+            print("\(sport): \(title)")
+            print()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd, MMM yyyy"
+//            let dateString = "\(day), \(monthYear)"
+            
+//            print(dateString)
+            
+//            let date = formatter.date(from: dateString)
+//            let sportEnum = Event.sports.init(rawValue: sportString)
         }
-        if !time.isEmpty {
-            print(time)
-        }
-        let title = elem.firstWordBetween(start: "target=\"_blank\">", end: "</a>")
-        if !title.isEmpty {
-            print(title)
-        }
+        
         
         
     }
@@ -273,7 +279,8 @@ extension String {
             }
             if tempEnd.isEmpty {
                 constructingString = false
-                if !temp.isEmpty {
+                
+                if temp.count > 1 {
                     temp.removeFirst()
                     temp = "\(temp.prefix(temp.count - end.count))"
                     result.append(temp)

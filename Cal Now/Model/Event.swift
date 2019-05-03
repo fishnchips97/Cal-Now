@@ -15,16 +15,33 @@ class Event {
         case Academic, Sport, Concert
     }
     
+    enum sports : String, CaseIterable {
+        case baseball,
+        softball,
+        track,
+        mten,
+        wten
+    }
+    
     var start: Date?
     var end: Date?
     var image: UIImage?
     var eventLink: String?
     var description: String?
     var type: EventType
-    static public var typesString: [String] {
+    static public var eventTypeStrings: [String] {
         get {
             var result = [String]()
             for elem in EventType.allCases {
+                result.append(elem.rawValue)
+            }
+            return result
+        }
+    }
+    static public var sportTypeStrings: [String] {
+        get {
+            var result = [String]()
+            for elem in sports.allCases {
                 result.append(elem.rawValue)
             }
             return result

@@ -12,6 +12,6 @@ var EventsList = [Event]()
 
 var categories: [String] {
     get {
-        return Event.typesString + WebCollector.sportsStrings
+        return Event.eventTypeStrings + Event.sportTypeStrings
     }
 }
