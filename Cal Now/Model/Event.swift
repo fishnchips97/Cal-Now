@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class Event {
-    
+
     enum EventType: String, CaseIterable {
         case Academic, Sport, Concert
     }
-    
+
     enum Sport : String, CaseIterable {
-        case baseball,
-        softball,
-        track,
+        case Baseball,
+        Softball,
+        Track,
         mten,
         wten
     }
-    
+
     var start: Date?
     var end: Date?
     var image: UIImage?
@@ -48,7 +48,7 @@ class Event {
             return result
         }
     }
-    
+
     init(start: Date?, end: Date?, image: UIImage?, eventLink: String?, type: EventType, description: String?) {
         if let strt = start {
             self.start = strt
@@ -63,25 +63,30 @@ class Event {
         if let link = eventLink {
             self.eventLink = link
         }
-        
+
         self.type = type
-        
         if type.rawValue == EventType.Sport.rawValue {
+
             if let desc = description {
                 self.sportType = Sport.init(rawValue: desc.prefix(upToString: ":"))
                 self.description = desc.suffix(afterString: ": ")
+
+            }
+        } else {
+            if let desc = description {
+                self.description = desc
             }
         } else {
             if let desc = description {
                 self.description = desc
             }
         }
-        
-        
-        
-        
+
+
+
+
     }
-    
+
     func printEvent() {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, yyyy h:mm aa"
@@ -97,10 +102,10 @@ class Event {
         } else {
             print("End: nil")
         }
-        
+
         print("EventLink: \(self.eventLink ?? "nil")")
         print("Description: \(self.description ?? "nil")")
-        
+
         print("Type: \(self.type.rawValue)")
         if self.type == .Sport {
             if let sprt = self.sportType {
@@ -108,5 +113,5 @@ class Event {
             }
         }
     }
-    
+
 }

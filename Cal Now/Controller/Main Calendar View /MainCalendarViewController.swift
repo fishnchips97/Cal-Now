@@ -10,84 +10,93 @@ import UIKit
 
 class MainCalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
-    
+
+
     let collector = WebCollector()
-    
+
     @IBOutlet weak var calendarTableView: UITableView!
-    
-    
+
+    weak var activityIndicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         calendarTableView.delegate = self
         calendarTableView.dataSource = self
-        
-        for site in collector.websites {
-//            print(site)
-            let url = URL(string: site)
-
-            let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-                if error != nil {
-                    print(site)
-                    print(error ?? "Error")
-                } else {
-                    let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//                    print(htmlContent)
-                    if let content = htmlContent?.substring(from: 0) {
-                        self.collector.parseWebsite(html: content, site: site)
-                        if self.collector.doneLoading {
-                            // load cells
-                            print("test")
-                            DispatchQueue.main.async {
-                                //Update your UI here
-                                self.reloadTable()
-                            }
-                           
-                        }
-                    }
-                    
-                }
-            }
-            task.resume()
-        }
         // Do any additional setup after loading the view.
+        let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        calendarTableView.backgroundView = activityIndicator
+        self.activityIndicator = activityIndicator
+        activityIndicator.center = view.center
+        activityIndicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        view.addSubview(activityIndicator)
+        activityIndicator.bringSubviewToFront(self.view)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        if EventsList.count == 0 {
+            activityIndicator.startAnimating()
+            populateCalendar(completion: {
+                DispatchQueue.main.async {
+                    useThisEventsList = EventsList
+                    self.reloadTable()
+                    self.activityIndicator.stopAnimating()
+                    self.calendarTableView.reloadData()
+                    print(EventsList.count)
+
+                }
+            })
+        } else {
+            useThisEventsList = EventsList
+            self.reloadTable()
+            self.calendarTableView.reloadData()
+        }
     }
-    
+
     func reloadTable() {
-        EventsList = EventsList.sorted(by: { (event1, event2) -> Bool in
-            if let start1 = event1.start, let start2 = event2.start {
+        useThisEventsList.removeAll()
+        for event in EventsList {
+            if event.type != .Sport && interestedEventsList.contains(String(describing: event.type)) {
+                useThisEventsList.append(event)
+            } else {
+                if let sprt = event.sportType {
+                    if interestedEventsList.contains(String(describing: sprt)) {
+                        useThisEventsList.append(event)
+                    }
+                }
+            }
+        }
+        useThisEventsList.sort { (e1, e2) -> Bool in
+            if let start1 = e1.start, let start2 = e2.start {
                 return start1.compare(start2).rawValue < 0
             }
-//            print("?")
-            return false
-            
-        })
-        
-        self.calendarTableView.reloadData()
-//        print(EventsList.count)
-//        print(EventsList)
+            if e1.start == nil {
+                return false
+            }
+            if e2.start == nil {
+                return true
+            }
+            return true
+        }
+        if useThisEventsList.isEmpty {
+            useThisEventsList = EventsList
+        }
     }
-    
+
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToAboutPage", sender: sender)
     }
-    
+
     @IBAction func filterButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toFilter", sender: sender)
     }
-    
+
     @IBAction func unwindToCalendar(segue: UIStoryboardSegue) { }
-    
+
     @IBAction func todayButton(_ sender: Any) {
         reloadTable()
     }
-    
+
     /*
     // MARK: - Navigation
 
@@ -98,46 +107,75 @@ class MainCalendarViewController: UIViewController, UITableViewDelegate, UITable
     }
     */
 
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EventsList.count
+        return useThisEventsList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
-            
-            let item = EventsList[indexPath.row]
-            item.printEvent()
-            if let desc = item.description {
-                var title = ""
-                
-                if item.type == .Sport {
-                    if let sprt = item.sportType {
-                        title = "\(sprt): \(desc)"
+            if let desc = useThisEventsList[indexPath.row].description {
+                if useThisEventsList[indexPath.row].type == .Sport {
+                    if let sprt = useThisEventsList[indexPath.row].sportType {
+                        if sprt == .mten {
+                            cell.titleLabel.text = "Men's Tennis: \(desc)"
+                        } else if sprt == .wten {
+                            cell.titleLabel.text = "Women's Tennis: \(desc)"
+                        } else {
+                            cell.titleLabel.text = "\(sprt): \(desc)"
+                        }
                     }
-                    
                 } else {
-                    title = desc
+                    cell.titleLabel.text = desc
                 }
-                
-                cell.titleLabel.text = title
             } else {
-                cell.titleLabel.text = "Title N/A"
+                cell.titleLabel.text = "TITLE"
             }
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MMM d, yyyy"
-            if let strt = EventsList[indexPath.row].start {
-                cell.dateLabel.text = formatter.string(from: strt)
+            let date = DateFormatter()
+            date.dateStyle = .medium
+            date.timeStyle = .none
+            date.locale = Locale(identifier: "en_US")
+            if let day = useThisEventsList[indexPath.row].start {
+                cell.dateLabel.text = date.string(from: day)
             } else {
                 cell.dateLabel.text = "Date N/A"
             }
-            
             return cell
         }
         return UITableViewCell()
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+
+    func populateCalendar(completion: @escaping () -> Void) {
+        DispatchQueue.main.async {
+           EventsList.removeAll()
+        }
+        for site in self.collector.websites {
+            //            print(site)
+            let url = URL(string: site)
+
+            let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+                if error != nil {
+                    print(site)
+                    print(error ?? "Error")
+                } else {
+                    let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                    //                    print(htmlContent)
+                    if let content = htmlContent?.substring(from: 0) {
+                        self.collector.parseWebsite(html: content, site: site)
+                        if self.collector.doneLoading {
+                            // load cells
+                            print("test")
+                            completion()
+                        }
+                    }
+
+                }
+            }
+            task.resume()
+        }
     }
 }
