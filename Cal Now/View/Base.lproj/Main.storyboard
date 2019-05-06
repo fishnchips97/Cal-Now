@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -124,39 +125,42 @@
                                         <rect key="frame" x="0.0" y="39" width="414" height="719"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentEvent" id="Tc0-Bj-y4u" customClass="MainCalendarEventCell" customModule="Cal_Now" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentEvent" id="Tc0-Bj-y4u">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tc0-Bj-y4u" id="MZO-BH-8yG">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utg-mw-MkY">
-                                                            <rect key="frame" x="20" y="0.0" width="34" height="21"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffl-vn-AvT">
-                                                            <rect key="frame" x="20" y="22" width="25.5" height="14"/>
-                                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J9P-hZ-QEt">
+                                                            <rect key="frame" x="20.5" y="-3" width="373" height="49.5"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="R3L-0Y-x5h">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="49.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-bQ-I8y">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="29"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s05-hp-Wz6">
+                                                                            <rect key="frame" x="0.0" y="29" width="373" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Utg-mw-MkY" firstAttribute="top" secondItem="MZO-BH-8yG" secondAttribute="top" id="5dr-R7-4Wc"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ffl-vn-AvT" secondAttribute="trailing" constant="20" symbolic="YES" id="707-vy-xY5"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Utg-mw-MkY" secondAttribute="trailing" constant="20" symbolic="YES" id="AvH-Nb-cHE"/>
-                                                        <constraint firstItem="Utg-mw-MkY" firstAttribute="leading" secondItem="MZO-BH-8yG" secondAttribute="leading" constant="20" id="qZv-IN-or1"/>
-                                                        <constraint firstItem="ffl-vn-AvT" firstAttribute="top" secondItem="MZO-BH-8yG" secondAttribute="top" constant="22" id="w0t-ci-miv"/>
-                                                        <constraint firstItem="ffl-vn-AvT" firstAttribute="leading" secondItem="MZO-BH-8yG" secondAttribute="leading" constant="20" id="yut-Ad-aZr"/>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="width" secondItem="MZO-BH-8yG" secondAttribute="width" multiplier="0.9" id="cO7-gw-vfA"/>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="centerX" secondItem="MZO-BH-8yG" secondAttribute="centerX" id="hFs-Ze-8m7"/>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="centerY" secondItem="MZO-BH-8yG" secondAttribute="centerY" id="t0G-MY-H5V"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="eventDate" destination="ffl-vn-AvT" id="34l-Jv-S63"/>
-                                                    <outlet property="eventTitle" destination="Utg-mw-MkY" id="ILO-eD-UAN"/>
-                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -207,12 +211,12 @@
                         <viewLayoutGuide key="safeArea" id="hMn-ai-4rO"/>
                     </view>
                     <connections>
-                        <outlet property="calendarTableView" destination="cxJ-Rr-nQM" id="Cmf-Y5-wPQ"/>
+                        <outlet property="calendarTableView" destination="cxJ-Rr-nQM" id="e2D-xI-JuM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXM-Ck-XHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266.66666666666669" y="360.9375"/>
+            <point key="canvasLocation" x="267" y="361"/>
         </scene>
         <!--About Page View Controller-->
         <scene sceneID="BnE-um-ZZK">

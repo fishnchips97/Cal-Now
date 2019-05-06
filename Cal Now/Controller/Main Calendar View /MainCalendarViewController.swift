@@ -8,21 +8,21 @@
 
 import UIKit
 
-class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
+class MainCalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let allEvents = Events()
+    
     let collector = WebCollector()
     
-    
     @IBOutlet weak var calendarTableView: UITableView!
+    
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0..<0 {
-            allEvents.testTableView()
-        }
         calendarTableView.delegate = self
         calendarTableView.dataSource = self
         
@@ -38,7 +38,12 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableVi
                     let htmlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 //                    print(htmlContent)
                     if let content = htmlContent?.substring(from: 0) {
-                        self.collector.parseWebsite(html: content)
+                        self.collector.parseWebsite(html: content, site: site)
+                        if self.collector.doneLoading {
+                            // load cells
+                            print("test")
+                           self.reloadTable()
+                        }
                     }
                     
                 }
@@ -46,6 +51,16 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableVi
             task.resume()
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
+    
+    func reloadTable() {
+        self.calendarTableView.reloadData()
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
@@ -58,23 +73,6 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableVi
     
     @IBAction func unwindToCalendar(segue: UIStoryboardSegue) { }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allEvents.Events.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
-            cell.eventTitle.text = allEvents.Events[indexPath.row].title
-            cell.eventDate.text = String(describing: allEvents.Events[indexPath.row].start) + " " + String(describing: allEvents.Events[indexPath.row].end)
-        }
-        return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -85,4 +83,21 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableVi
     }
     */
 
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return EventsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
+            cell.eventTitle.text = EventsList[indexPath.row].description
+            cell.eventDate.text = String(describing: EventsList[indexPath.row].start) + " " + String(describing: EventsList[indexPath.row].end)
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 }
