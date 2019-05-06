@@ -11,13 +11,10 @@ import UIKit
 class MainCalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
+    
     let collector = WebCollector()
     
     @IBOutlet weak var calendarTableView: UITableView!
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -42,7 +39,11 @@ class MainCalendarViewController: UIViewController, UITableViewDelegate, UITable
                         if self.collector.doneLoading {
                             // load cells
                             print("test")
-                           self.reloadTable()
+                            DispatchQueue.main.async {
+                                //Update your UI here
+                                self.reloadTable()
+                            }
+                           
                         }
                     }
                     
@@ -56,11 +57,21 @@ class MainCalendarViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
     }
     
     func reloadTable() {
+        EventsList = EventsList.sorted(by: { (event1, event2) -> Bool in
+            if let start1 = event1.start, let start2 = event2.start {
+                return start1.compare(start2).rawValue < 0
+            }
+//            print("?")
+            return false
+            
+        })
+        
         self.calendarTableView.reloadData()
+//        print(EventsList.count)
+//        print(EventsList)
     }
     
     @IBAction func aboutButtonPressed(_ sender: UIButton) {
@@ -72,6 +83,10 @@ class MainCalendarViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindToCalendar(segue: UIStoryboardSegue) { }
+    
+    @IBAction func todayButton(_ sender: Any) {
+        reloadTable()
+    }
     
     /*
     // MARK: - Navigation
@@ -89,10 +104,35 @@ class MainCalendarViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
-            cell.eventTitle.text = EventsList[indexPath.row].description
-            cell.eventDate.text = String(describing: EventsList[indexPath.row].start) + " " + String(describing: EventsList[indexPath.row].end)
+            
+            let item = EventsList[indexPath.row]
+            item.printEvent()
+            if let desc = item.description {
+                var title = ""
+                
+                if item.type == .Sport {
+                    if let sprt = item.sportType {
+                        title = "\(sprt): \(desc)"
+                    }
+                    
+                } else {
+                    title = desc
+                }
+                
+                cell.titleLabel.text = title
+            } else {
+                cell.titleLabel.text = "Title N/A"
+            }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM d, yyyy"
+            if let strt = EventsList[indexPath.row].start {
+                cell.dateLabel.text = formatter.string(from: strt)
+            } else {
+                cell.dateLabel.text = "Date N/A"
+            }
+            
+            return cell
         }
         return UITableViewCell()
     }
