@@ -12,11 +12,6 @@ class Events {
     var Events = [Event]()
     var dateEvents = [Date:Event]()
     var categories = [Event.EventType]()
-    
-    func testTableView() {
-        let testEvent = Event(start: Date(), end: Date(), image: #imageLiteral(resourceName: "oski"), eventLink: " ", type: .Academic, description: "This is a test")
-        Events.append(testEvent)
-    }
 }
 
 

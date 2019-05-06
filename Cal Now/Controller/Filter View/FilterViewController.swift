@@ -10,9 +10,6 @@ import UIKit
 
 class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let allEvents = Events()
-    var interestedCategories: [Event.EventType] = []
-    
     @IBOutlet weak var filterTableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,12 +20,18 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allEvents.Events.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "categories") as? FilterCell {
-            cell.filterCategory.text = String(describing: allEvents.categories[indexPath.row])
+            var categoryName = categories[indexPath.row]
+            if categoryName == "wten" {
+                categoryName = "Women's Tennis"
+            } else if categoryName == "mten" {
+                categoryName = "Men's Tennis"
+            }
+            cell.filterCategory.text = categoryName
             cell.layer.cornerRadius = 10
             return cell
         }
@@ -45,14 +48,14 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.contentView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         //Try to make text color white when you change cell background color to green
         cell.filterCategory.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        interestedCategories.append(allEvents.categories[indexPath.row])
+        interestedEventsList.append(categories[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)! as! FilterCell
         cell.filterCategory.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        removeSpecific(allEvents.categories[indexPath.row])
+        removeSpecific(categories[indexPath.row])
     }
     
     
@@ -60,15 +63,15 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         dismiss(animated: true, completion: nil)
     }
     
-    func removeSpecific(_ eventCategory: Event.EventType) {
+    func removeSpecific(_ eventCategory: String) {
         var removeIndex: Int = 0
-        for index in 0..<interestedCategories.count {
-            if eventCategory == interestedCategories[index] {
+        for index in 0..<interestedEventsList.count {
+            if eventCategory == interestedEventsList[index] {
                 removeIndex = index
                 break
             }
         }
-        interestedCategories.remove(at: removeIndex)
+        interestedEventsList.remove(at: removeIndex)
     }
     
     /*

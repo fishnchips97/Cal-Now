@@ -23,11 +23,11 @@ class PersonViewController: UIViewController {
         if personTag == 0 {
             headerName.text = "Erik"
             personImage.image = #imageLiteral(resourceName: "erik")
-            personBlurb.text = "We made CalNow because we were sick of the inconvienence other sources provided. There did not exist a convenient place where we could check when Spring Break came or when a basketball game was. We built CalNow so that everyone can know what is happening on our campus without having to flip between a variety of websites."
+            personBlurb.text = "Cal EECS Student"
         } else if personTag == 1 {
             headerName.text = "Mangesh"
             personImage.image = #imageLiteral(resourceName: "mangesh")
-            personBlurb.text = "We made CalNow because we were sick of the inconvienence other sources provided. There did not exist a convenient place where we could check when Spring Break came or when a basketball game was. We built CalNow so that everyone can know what is happening on our campus without having to flip between a variety of websites."
+            personBlurb.text = "Cal L&S CS Student"
         }
 
         // Do any additional setup after loading the view.

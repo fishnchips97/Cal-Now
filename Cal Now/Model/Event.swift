@@ -16,9 +16,9 @@ class Event {
     }
     
     enum Sport : String, CaseIterable {
-        case baseball,
-        softball,
-        track,
+        case Baseball,
+        Softball,
+        Track,
         mten,
         wten
     }
@@ -65,11 +65,16 @@ class Event {
         }
         
         self.type = type
-        if type == .Sport {
+        if type.rawValue == EventType.Sport.rawValue {
             
             if let desc = description {
                 self.sportType = Sport.init(rawValue: desc.prefix(upToString: ":"))
                 self.description = desc.suffix(afterString: ": ")
+                
+            }
+        } else {
+            if let desc = description {
+                self.description = desc
             }
         }
     }

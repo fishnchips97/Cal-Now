@@ -11,8 +11,9 @@ import UIKit
 
 class MainCalendarEventCell: UITableViewCell {
     
-    @IBOutlet weak var eventTitle: UILabel!
-    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

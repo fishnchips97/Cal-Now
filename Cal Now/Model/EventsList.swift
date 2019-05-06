@@ -9,6 +9,8 @@
 import Foundation
 
 var EventsList = [Event]()
+var useThisEventsList = [Event]()
+var interestedEventsList = [String]()
 
 var categories: [String] {
     get {
