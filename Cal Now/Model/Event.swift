@@ -76,14 +76,7 @@ class Event {
             if let desc = description {
                 self.description = desc
             }
-        } else {
-            if let desc = description {
-                self.description = desc
-            }
         }
-
-
-
 
     }
 
