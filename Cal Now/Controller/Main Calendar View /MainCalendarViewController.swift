@@ -9,7 +9,22 @@
 
 import UIKit
 
-class MainCalendarViewController: UIViewController, XMLParserDelegate {
+class MainCalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return EventsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
+            
+        }
+        
+        
+        return UITableViewCell()
+    }
+    
 
     let collector = WebCollector()
     

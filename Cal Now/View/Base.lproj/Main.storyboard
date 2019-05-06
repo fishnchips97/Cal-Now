@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -130,6 +131,35 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tc0-Bj-y4u" id="MZO-BH-8yG">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J9P-hZ-QEt">
+                                                            <rect key="frame" x="20.5" y="-3" width="373" height="49.5"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="R3L-0Y-x5h">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="49.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-bQ-I8y">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="373" height="29"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s05-hp-Wz6">
+                                                                            <rect key="frame" x="0.0" y="29" width="373" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="width" secondItem="MZO-BH-8yG" secondAttribute="width" multiplier="0.9" id="cO7-gw-vfA"/>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="centerX" secondItem="MZO-BH-8yG" secondAttribute="centerX" id="hFs-Ze-8m7"/>
+                                                        <constraint firstItem="J9P-hZ-QEt" firstAttribute="centerY" secondItem="MZO-BH-8yG" secondAttribute="centerY" id="t0G-MY-H5V"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
