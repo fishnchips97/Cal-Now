@@ -31,6 +31,10 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate {
 //                    print(htmlContent)
                     if let content = htmlContent?.substring(from: 0) {
                         self.collector.parseWebsite(html: content, site: site)
+                        if self.collector.doneLoading {
+                            // load cells
+                            print("test")
+                        }
                     }
                     
                 }

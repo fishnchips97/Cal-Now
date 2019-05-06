@@ -23,7 +23,9 @@ class WebCollector {
     
     var failedLoads = 0
     var loads = 0
+    var doneLoading = false
     func parseWebsite(html: String, site: String) {
+        doneLoading = false
 //        print(html)
 //        var replaceMe = [Event]()
         loads += 1
@@ -46,11 +48,8 @@ class WebCollector {
             sportParse(htmlToParse: html, sport: sportString)
         }
         if (loads - failedLoads) == websites.count {
+            doneLoading = true
             print("done")
-//            for event in EventsList {
-////                print()
-////                event.printEvent()
-//            }
             print("\(EventsList.count) events")
         }
         
@@ -164,15 +163,15 @@ func theaterParse(htmlToParse: String) {
 func sportParse(htmlToParse: String, sport: String) {
 //    print(htmlToParse)
 
-    var eventStrings = htmlToParse.wordsBetween(
-        start: "opponent-date",
-        end: "Watch</a>"
+    let eventStrings = htmlToParse.wordsBetween(
+        start: "<li",
+        end: "</li>"
     )
 //    eventStrings += htmlToParse.wordsBetween(
 //        start: "opponent-date",
 //        end: "Recap</a>"
 //    )
-
+    
     for elem in eventStrings {
 //        print(elem)
 
@@ -180,36 +179,62 @@ func sportParse(htmlToParse: String, sport: String) {
         let vs = elem.wordsBetween(start: "<span class=\"sidearm-schedule-game-home\">", end: "</span>")
         let at = elem.wordsBetween(start: "<span class=\"sidearm-schedule-game-away\">", end: "</span>")
         let possibleTitles = elem.wordsBetween(start: "target=\"_blank\">", end: "</a>")
-//        var possibleYears = elem.wordsBetween(start: "on ", end: "\">")
+        var possibleYears = elem.wordsBetween(start: ", ", end: "<")
 //        possibleYears = possibleYears.filter({ (str) -> Bool in
 //            str.contains(subString: " at ")
 //        })
-//        for n in possibleYears {
-//            print(n)
-//        }
         
-        if dateAndTime.count > 1 && possibleTitles.count > 0 {
+        if dateAndTime.count > 1 && possibleTitles.count > 0 && possibleYears.count > 0 {
+            var year = possibleYears[0].prefix(upToString: "\"")
+            year = year.prefix(upToString: " ")
             var dateString = dateAndTime[0]
             dateString = dateString.prefix(upToString: " (")
-            let time = dateAndTime[1]
-            var title = possibleTitles[0]
-            if !vs.isEmpty {
-                title = vs[0] + " " + title
-            } else if !at.isEmpty {
-                title = at[0] + " " + title
+            if (year.isInt) {
+                 dateString = dateString + ", \(year)"
             }
-            print("date: \(dateString)")
-            print("time: \(time)")
-            print("\(sport): \(title)")
-            print()
+            
+            var time = dateAndTime[1]
+            if time.contains(":") {
+                time = time.prefix(upToString: " PT")
+            }
+            var description = possibleTitles[0]
+            
+            if !vs.isEmpty {
+                description = vs[0] + " " + description
+            } else if !at.isEmpty {
+                description = at[0] + " " + description
+            }
+            description = "\(sport): \(description)"
+//            print("date: \(dateString)")
+//            print("time: \(time)")
+//            print(description)
+//            print()
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd, MMM yyyy"
-//            let dateString = "\(day), \(monthYear)"
+            if time != "All Day " {
+                dateString = dateString + " " + time
+                formatter.dateFormat = "MMM d, yyyy h:mm aa"
+            } else {
+                formatter.dateFormat = "MMM d, yyyy"
+            }
             
 //            print(dateString)
             
-//            let date = formatter.date(from: dateString)
+            
+            var date = formatter.date(from: dateString)
+            if date == nil {
+                formatter.dateFormat = "MMM d, yyyy"
+                let calendar = Calendar.current
+                let today = Date()
+                let year = calendar.component(.year, from: today)
+                dateString = "\(dateString), \(year)"
+                date = formatter.date(from: dateString)
+            }
+            
+            
 //            let sportEnum = Event.sports.init(rawValue: sportString)
+            let newEvent = Event(start: date, end: nil, image: nil, eventLink: nil, type: .Sport, description: description)
+            EventsList.append(newEvent)
+//            newEvent.printEvent()
         }
         
         
@@ -384,6 +409,10 @@ extension String {
             }
         }
         return count
+    }
+    
+    var isInt: Bool {
+        return Int(self) != nil
     }
 
 }

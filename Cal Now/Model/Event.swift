@@ -15,7 +15,7 @@ class Event {
         case Academic, Sport, Concert
     }
     
-    enum sports : String, CaseIterable {
+    enum Sport : String, CaseIterable {
         case baseball,
         softball,
         track,
@@ -29,6 +29,7 @@ class Event {
     var eventLink: String?
     var description: String?
     var type: EventType
+    var sportType: Sport?
     static public var eventTypeStrings: [String] {
         get {
             var result = [String]()
@@ -41,7 +42,7 @@ class Event {
     static public var sportTypeStrings: [String] {
         get {
             var result = [String]()
-            for elem in sports.allCases {
+            for elem in Sport.allCases {
                 result.append(elem.rawValue)
             }
             return result
@@ -59,18 +60,26 @@ class Event {
             self.image = img
         }
         
-        self.type = type
+        
         if let link = eventLink {
             self.eventLink = link
         }
-        if let desc = description {
-            self.description = desc
+        
+        self.type = type
+        if type == .Sport {
+            
+            if let desc = description {
+                self.sportType = Sport.init(rawValue: desc.prefix(upToString: ":"))
+                self.description = desc.suffix(afterString: ": ")
+            }
         }
+        
+        
     }
     
     func printEvent() {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MMM-yyyy"
+        formatter.dateFormat = "MMM d, yyyy h:mm aa"
         if let strt = self.start {
             let start = formatter.string(from: strt)
             print("Start: \(start)")
@@ -88,6 +97,11 @@ class Event {
         print("Description: \(self.description ?? "nil")")
         
         print("Type: \(self.type.rawValue)")
+        if self.type == .Sport {
+            if let sprt = self.sportType {
+                print("Sport Type: \(sprt)")
+            }
+        }
     }
     
 }
