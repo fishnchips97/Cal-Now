@@ -2,7 +2,7 @@
 //  AboutPageViewController.swift
 //  Cal Now
 //
-//  Created by Mangesh Darke on 4/18/19.
+//  Created by Mangesh Darke and Erik Fisher on 4/18/19.
 //  Copyright © 2019 DarkeFisher. All rights reserved.
 //
 

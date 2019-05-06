@@ -2,21 +2,29 @@
 //  MainCalendarViewController.swift
 //  Cal Now
 //
-//  Created by Mangesh Darke on 4/18/19.
-//  Additional contributions by Erik Fisher
+//  Created by Mangesh Darke and Erik Fisher on 4/18/19.
 //  Copyright © 2019 DarkeFisher. All rights reserved.
 //
 
 import UIKit
 
-class MainCalendarViewController: UIViewController, XMLParserDelegate {
+class MainCalendarViewController: UIViewController, XMLParserDelegate, UITableViewDelegate, UITableViewDataSource {
 
+    let allEvents = Events()
     let collector = WebCollector()
     
+    
+    @IBOutlet weak var calendarTableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for _ in 0..<0 {
+            allEvents.testTableView()
+        }
+        calendarTableView.delegate = self
+        calendarTableView.dataSource = self
         
         for site in collector.websites {
 //            print(site)
@@ -49,6 +57,23 @@ class MainCalendarViewController: UIViewController, XMLParserDelegate {
     }
     
     @IBAction func unwindToCalendar(segue: UIStoryboardSegue) { }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allEvents.Events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "currentEvent") as? MainCalendarEventCell {
+            cell.eventTitle.text = allEvents.Events[indexPath.row].title
+            cell.eventDate.text = String(describing: allEvents.Events[indexPath.row].start) + " " + String(describing: allEvents.Events[indexPath.row].end)
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     
     /*
     // MARK: - Navigation

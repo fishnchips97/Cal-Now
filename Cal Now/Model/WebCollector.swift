@@ -2,7 +2,7 @@
 //  academicScraper.swift
 //  Cal Now
 //
-//  Created by Erik Fisher on 4/11/19.
+//  Created by Erik Fisher and Mangesh Darke on 4/11/19.
 //  Copyright © 2019 Darke Fisher. All rights reserved.
 //
 
@@ -120,7 +120,7 @@ func academicParse(htmlToParse: String) {
         if !elem.contains(subString: " - ") {
             let tempDescription = elem.prefix(upToString: ", ")
             let tempLink = elem.suffix(afterString: ", ")
-            newEvent = Event(start: nil, end: nil, image: nil, eventLink: tempLink, type: .Academic, description: tempDescription)
+            newEvent = Event(start: nil, end: nil, image: nil, eventLink: tempLink, type: .Academic, description: tempDescription, title: "")
         } else {
             let description = elem.prefix(upToString: " - ")
             let rest = elem.suffix(afterString: " - ")
@@ -132,12 +132,12 @@ func academicParse(htmlToParse: String) {
                 formatter.dateFormat = "EEEE, MMMM d, yyyy"
                 let date1 = formatter.date(from: date1str)
                 let date2 = formatter.date(from: date2str)
-                newEvent = Event(start: date1, end: date2, image: nil, eventLink: nil, type: .Academic, description: description)
+                newEvent = Event(start: date1, end: date2, image: nil, eventLink: nil, type: .Academic, description: description, title: "")
             } else {
                 let date1str = rest
                 formatter.dateFormat = "EEEE, MMMM d, yyyy"
                 let date1 = formatter.date(from: date1str)
-                newEvent = Event(start: date1, end: nil, image: nil, eventLink: nil, type: .Academic, description: description)
+                newEvent = Event(start: date1, end: nil, image: nil, eventLink: nil, type: .Academic, description: description, title: "")
             }
         }
         EventsList.append(newEvent)
@@ -173,7 +173,7 @@ func theaterParse(htmlToParse: String) {
             let dateString = "\(day), \(monthYear)"
             
             let date = formatter.date(from: dateString)
-            let newEvent = Event(start: date, end: nil, image: nil, eventLink: link, type: .Concert, description: title)
+            let newEvent = Event(start: date, end: nil, image: nil, eventLink: link, type: .Concert, description: title, title: "")
             EventsList.append(newEvent)
         }
     }

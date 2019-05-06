@@ -2,7 +2,7 @@
 //  Event.swift
 //  Cal Now
 //
-//  Created by Erik Fisher on 4/11/19.
+//  Created by Erik Fisher and Mangesh Darke on 4/11/19.
 //  Copyright © 2019 Darke Fisher. All rights reserved.
 //
 
@@ -20,6 +20,7 @@ class Event {
     var image: UIImage?
     var eventLink: String?
     var description: String?
+    var title: String?
     var type: EventType
     static public var typesString: [String] {
         get {
@@ -31,7 +32,7 @@ class Event {
         }
     }
     
-    init(start: Date?, end: Date?, image: UIImage?, eventLink: String?, type: EventType, description: String?) {
+    init(start: Date?, end: Date?, image: UIImage?, eventLink: String?, type: EventType, description: String?, title: String?) {
         if let strt = start {
             self.start = strt
         }
@@ -41,13 +42,15 @@ class Event {
         if let img = image {
             self.image = img
         }
-        
         self.type = type
         if let link = eventLink {
             self.eventLink = link
         }
         if let desc = description {
             self.description = desc
+        }
+        if let titl = title {
+            self.title = titl
         }
     }
     

@@ -2,7 +2,7 @@
 //  FilterViewController.swift
 //  Cal Now
 //
-//  Created by Mangesh Darke on 4/25/19.
+//  Created by Mangesh Darke and Erik Fisher on 4/25/19.
 //  Copyright © 2019 DarkeFisher. All rights reserved.
 //
 
@@ -29,6 +29,7 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "categories") as? FilterCell {
             cell.filterCategory.text = String(describing: allEvents.categories[indexPath.row])
+            cell.layer.cornerRadius = 10
             return cell
         }
         return UITableViewCell()
@@ -39,15 +40,17 @@ class FilterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)!
+        tableView.allowsMultipleSelection = true
+        let cell = tableView.cellForRow(at: indexPath)! as! FilterCell
         cell.contentView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         //Try to make text color white when you change cell background color to green
+        cell.filterCategory.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         interestedCategories.append(allEvents.categories[indexPath.row])
-        //tableView.allowsMultipleSelection = true
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)!
+        let cell = tableView.cellForRow(at: indexPath)! as! FilterCell
+        cell.filterCategory.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         cell.contentView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         removeSpecific(allEvents.categories[indexPath.row])
     }
